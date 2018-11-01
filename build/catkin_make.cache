@@ -1,0 +1,2 @@
+realsense/realsense2_camera:yumi_main
+-DCATKIN_DEVEL_PREFIX=/home/casch/yumi_ws/devel -DCMAKE_INSTALL_PREFIX=/home/casch/yumi_ws/install -G Unix Makefiles
