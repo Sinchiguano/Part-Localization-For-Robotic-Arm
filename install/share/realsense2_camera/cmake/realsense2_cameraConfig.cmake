@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/casch/yumi_ws/install/lib;/home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/casch/yumi_ws/install/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -160,7 +160,7 @@ foreach(t ${realsense2_camera_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime;roscpp;sensor_msgs;std_msgs;nodelet;cv_bridge;image_transport;dynamic_reconfigure;rgbd_launch")
+set(depends "message_runtime;roscpp;sensor_msgs;std_msgs;nodelet;cv_bridge;image_transport;dynamic_reconfigure")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

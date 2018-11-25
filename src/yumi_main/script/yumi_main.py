@@ -7,7 +7,6 @@
 # Distributed under terms of the BSD license.
 
 #!/usr/bin/env python
-
 # Python libs
 import sys, time
 
@@ -107,7 +106,7 @@ def main():
     rospy.init_node('listener', anonymous=True)
 
 
-
+    #Subscriber to the rgb, rgbd and point cloud data...
     rospy.Subscriber(topic_rgb_image, Image, callback_rgb)
     rospy.Subscriber(topic_depth_image, Image, callback_depth)
     rospy.Subscriber(topic_point_cloud, PointCloud2, callback_pointCloud)
@@ -130,11 +129,12 @@ def main():
             continue
         elif dpth is None:
             continue
+        numpy_horizontal = np.hstack((img, pc))
 
-        # print('good!!!')
-        # img = get_image()
-        # cv2.imshow('image',img)
-        # cv2.waitKey(3)
+        print('good!!!')
+        img = get_image()
+        cv2.imshow('image',pc)
+        cv2.waitKey(3)
 
         # # mask out floor points
         # mask = pc[:,:,1] > x_range[0]
@@ -154,8 +154,10 @@ def main():
         # im_color = cv2.applyColorMap(255 - image.astype(np.uint8), cv2.COLORMAP_JET)
 
         # show image
-        cv2.imshow('WINDOW', img)
-        cv2.waitKey(1)
+        # cv2.imshow('WINDOW', img)
+        # cv2.waitKey(1)
+    # close any open windows
+    cv2.destroyAllWindows()
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 

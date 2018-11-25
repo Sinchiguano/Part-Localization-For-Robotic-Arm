@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/casch/yumi_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/casch/yumi_ws/build"
-export PYTHONPATH="/home/casch/yumi_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
