@@ -30,7 +30,7 @@ bridge = CvBridge()
 cv_image1=None
 cv_image2=None
 pts=None
-
+pc=None
 
 # focalLength = 525.0
 # centerX = 319.5
@@ -91,16 +91,23 @@ def callback_depth(data):
     # cv2.waitKey(3)
 def callback_pointCloud(data):
     global pts
-    pts = list(pc2.read_points(data, skip_nans=False, field_names=("x", "y", "z")))
+    global pc
     # print(len(pts))
     # print(type(pts))
     # print(pts[0:1])
-    if len(pts) == 307200:
-        pts= np.array(list(pts)).reshape((480,640,3))
-        #print(type(pts))
-    # elif len(pts) == 172800:
-    #     pc = np.array(list(pts)).reshape((360,480,3))
-    #print(pts.shape)
+    if data is not None:
+        print('there is something at least!!!')
+        pts = list(pc2.read_points(data, skip_nans=False, field_names=("x", "y", "z")))
+        temp=pc2.read_points(data, skip_nans=False, field_names=("x", "y", "z"))
+        print('i am here:',type(temp))
+        if len(pts) == 307200:
+            pc = np.array(list(pts)).reshape((480,640,3))
+        elif len(pts) == 172800:
+            pc = np.array(list(pts)).reshape((360,480,3))
+    else:
+        rospy.logerr("No point cloud image, did you initialize Turtlebot(pc=True)")
+    print(type(pc))
+
 
 def infoDepthCallback(msg):
     #print('received info from depth camera!!!',msg)
@@ -115,21 +122,24 @@ def get_depth():
     global cv_image2
     return cv_image2
 def get_point_cloud():
-    global pts
-    return pts
+    global pc
+    return pc
 
 x_range = (-0.3, 0.3)
 z_range = (0.3, 3.0)
 
 def main():
     # In ROS, nodes are uniquely named.
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('Astra', anonymous=True)
+
     #Subscriber to the rgb, rgbd, point cloud data and informations of the first two of them...
-    rospy.Subscriber('/camera/rgb/image_raw', Image, callback_rgb)
-    rospy.Subscriber('/camera/depth/image_raw', Image, callback_depth)
+    # rospy.Subscriber('/camera/rgb/image_raw', Image, callback_rgb)
+    # rospy.Subscriber('/camera/depth/image_raw', Image, callback_depth)
     rospy.Subscriber('/camera/depth_registered/points', PointCloud2, callback_pointCloud)
-    rospy.Subscriber('/camera/depth/camera_info', CameraInfo,infoDepthCallback)
-    rospy.Subscriber('/camera/rgb/camera_info', CameraInfo,infoColorCallback)
+    # rospy.Subscriber('/camera/depth/camera_info', CameraInfo,infoDepthCallback)
+    # rospy.Subscriber('/camera/rgb/camera_info', CameraInfo,infoColorCallback)
+
+    global pts
 
     while(True):
        # get rgb image
@@ -142,18 +152,24 @@ def main():
         dpth=get_depth()
 
         # wait for image or point cloud to be ready
-        if img is None:
+        if pc is None:
             continue
-        elif pc is None:
-            continue
-        elif dpth is None:
-            continue
-        #numpy_horizontal = np.hstack((img, pc))
-        #
+        # elif img is None:
+        #     continue
+        # elif dpth is None:
+        #     continue
+        from plyfile import PlyData, PlyElement
+        print('type:',type(pc))
+        print('shape:',pc.shape)
         print('good!!!')
-        cv2.imshow('point cloud:',img)
-        cv2.waitKey(3)
 
+        el = PlyElement.describe(pc, 'cloud')
+        PlyData([el]).write('some_binary.ply')
+        #pc.to_file("output.ply")
+        #exit(0)
+        cv2.imshow('point cloud:',pc)
+        cv2.waitKey(3)
+        exit(0)
     # close any open windows
     cv2.destroyAllWindows()
     # spin() simply keeps python from exiting until this node is stopped
