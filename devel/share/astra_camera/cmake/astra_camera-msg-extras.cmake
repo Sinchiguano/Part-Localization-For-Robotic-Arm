@@ -1,2 +1,2 @@
 set(astra_camera_MESSAGE_FILES "")
-set(astra_camera_SERVICE_FILES "/home/casch/yumi_ws/src/astra/ros_astra_camera/srv/GetSerial.srv")
+set(astra_camera_SERVICE_FILES "/home/casch/yumi_ws/src/ros_astra_camera/srv/GetSerial.srv")

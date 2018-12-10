@@ -142,6 +142,7 @@ def main():
     global pts
 
     while(True):
+        print('i am here and i am not able to see anything!!!')
        # get rgb image
         img = get_image()
 

@@ -71,23 +71,11 @@ Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_
 //Boost program_options library (release)
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_program_options.so
 
-//Boost python library (debug)
-Boost_PYTHON_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
-
-//Boost python library (release)
-Boost_PYTHON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
-
 //Boost regex library (debug)
 Boost_REGEX_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_regex.so
 
 //Boost regex library (release)
 Boost_REGEX_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_regex.so
-
-//Boost serialization library (debug)
-Boost_SERIALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_serialization.so
-
-//Boost serialization library (release)
-Boost_SERIALIZATION_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_serialization.so
 
 //Boost signals library (debug)
 Boost_SIGNALS_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -114,7 +102,7 @@ CATKIN_BLACKLIST_PACKAGES:STRING=
 CATKIN_DEVEL_PREFIX:PATH=/home/casch/yumi_ws/devel
 
 //Catkin enable testing
-CATKIN_ENABLE_TESTING:BOOL=ON
+CATKIN_ENABLE_TESTING:BOOL=False
 
 //Catkin skip testing
 CATKIN_SKIP_TESTING:BOOL=OFF
@@ -131,7 +119,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -278,30 +266,7 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
-COUCHAPP:FILEPATH=/home/casch/.local/bin/couchapp
-
-//Path to a file.
-CURL_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-CURL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
-
-//The directory containing a CMake configuration file for Ceres.
-Ceres_DIR:PATH=/usr/local/lib/cmake/Ceres
-
-//Path to a program.
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
-
-//Deploy destination for docs, or OFF.  Will be passed to rsync;
-// may contain user@ syntax for ssh
-ECTO_DOCS_DEPLOY_DESTINATION:STRING=OFF
-
-//Generate logs containing fine-grained per-cell execution timing
-// information.  You probably don't want this.
-ECTO_LOG_STATS:BOOL=OFF
-
-//Eigen include directory
-EIGEN_INCLUDE_DIR:STRING=/usr/include/eigen3
 
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
@@ -324,23 +289,8 @@ FREETYPE_INCLUDE_DIR_ft2build:PATH=/usr/include/freetype2
 //Path to a library.
 FREETYPE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetype.so
 
-//Path to a file.
-GFLAGS_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-GFLAGS_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgflags.so
-
-//gflags namespace (google or gflags)
-GFLAGS_NAMESPACE:STRING=google
-
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
-
-//Path to a file.
-GLOG_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-GLOG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libglog.so
 
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
@@ -723,9 +673,6 @@ OGRE_Volume_LIBRARY_FWK:STRING=NOTFOUND
 //x
 OGRE_Volume_LIBRARY_REL:FILEPATH=/usr/lib/x86_64-linux-gnu/libOgreVolume.so
 
-//The location for the web ui to be installed to.
-OR_WEB_UI_LOCATION:STRING=http://localhost:5984/or_web_ui
-
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
 
@@ -759,15 +706,6 @@ PROTOBUF_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotoc.so
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
-//Path to a file.
-PYTHON_INCLUDE_DIR:PATH=/usr/include/python2.7
-
-//Path to a library.
-PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython2.7.so
-
-//Path to a library.
-PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
-
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=
 
@@ -788,9 +726,6 @@ SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Set user wait point in startup (for debug)
 SET_USER_BREAK_AT_STARTUP:BOOL=OFF
-
-//Path to a program.
-SPHINX_BUILD:FILEPATH=SPHINX_BUILD-NOTFOUND
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
@@ -823,10 +758,10 @@ actionlib_DIR:PATH=/opt/ros/kinetic/share/actionlib/cmake
 actionlib_msgs_DIR:PATH=/opt/ros/kinetic/share/actionlib_msgs/cmake
 
 //Value Computed by CMake
-astra_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/astra/ros_astra_camera
+astra_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/ros_astra_camera
 
 //Value Computed by CMake
-astra_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/astra/ros_astra_camera
+astra_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/ros_astra_camera
 
 //Dependencies for the target
 astra_camera_nodelet_LIB_DEPENDS:STATIC=general;astra_driver_lib;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
@@ -835,10 +770,10 @@ astra_camera_nodelet_LIB_DEPENDS:STATIC=general;astra_driver_lib;general;/opt/ro
 astra_driver_lib_LIB_DEPENDS:STATIC=general;astra_wrapper;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
 
 //Value Computed by CMake
-astra_launch_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/astra/ros_astra_launch
+astra_launch_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/ros_astra_launch
 
 //Value Computed by CMake
-astra_launch_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/astra/ros_astra_launch
+astra_launch_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/ros_astra_launch
 
 //Dependencies for the target
 astra_wrapper_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;-lOpenNI2Orbbec;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
@@ -848,12 +783,6 @@ bond_DIR:PATH=/opt/ros/kinetic/share/bond/cmake
 
 //The directory containing a CMake configuration file for bondcpp.
 bondcpp_DIR:PATH=/opt/ros/kinetic/share/bondcpp/cmake
-
-//Value Computed by CMake
-caljob_creator_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/industrial_calibration/caljob_creator
-
-//Value Computed by CMake
-caljob_creator_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/industrial_calibration/caljob_creator
 
 //Value Computed by CMake
 camera_calibration_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/camera_calibration
@@ -876,9 +805,6 @@ class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 //The directory containing a CMake configuration file for cmake_modules.
 cmake_modules_DIR:PATH=/opt/ros/kinetic/share/cmake_modules/cmake
 
-//Dependencies for the target
-common_interface_LIB_DEPENDS:STATIC=general;object_recognition_core_db;
-
 //The directory containing a CMake configuration file for control_msgs.
 control_msgs_DIR:PATH=/opt/ros/kinetic/share/control_msgs/cmake
 
@@ -899,12 +825,6 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
-
-//Dependencies for the target
-db_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;object_recognition_core_db;
-
-//Dependencies for the target
-db_interface_LIB_DEPENDS:STATIC=general;object_recognition_core_common;general;object_recognition_core_db;
 
 //Value Computed by CMake
 default_cfg_fkie_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/multimaster_fkie/default_cfg_fkie
@@ -930,17 +850,8 @@ diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
 
-//The directory containing a CMake configuration file for ecto.
-ecto_DIR:PATH=/opt/ros/kinetic/share/ecto/cmake
-
 //The directory containing a CMake configuration file for eigen_conversions.
 eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
-
-//The directory containing a CMake configuration file for eigen_stl_containers.
-eigen_stl_containers_DIR:PATH=/opt/ros/kinetic/share/eigen_stl_containers/cmake
-
-//Dependencies for the target
-filters_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;
 
 //The directory containing a CMake configuration file for gazebo.
 gazebo_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/gazebo
@@ -974,9 +885,6 @@ gennodejs_DIR:PATH=/opt/ros/kinetic/share/gennodejs/cmake
 
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/kinetic/share/genpy/cmake
-
-//The directory containing a CMake configuration file for geometric_shapes.
-geometric_shapes_DIR:PATH=/opt/ros/kinetic/share/geometric_shapes/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
@@ -1078,35 +986,11 @@ image_view_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_calibration
 //Value Computed by CMake
 image_view_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_view
 
-//Value Computed by CMake
-industrial_extrinsic_cal_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/industrial_calibration/industrial_extrinsic_cal
-
-//The directory containing a CMake configuration file for industrial_extrinsic_cal.
-industrial_extrinsic_cal_DIR:PATH=/home/casch/yumi_ws/devel/share/industrial_extrinsic_cal/cmake
-
-//Dependencies for the target
-industrial_extrinsic_cal_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libyaml-cpp.so;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libmoveit_common_planning_interface_objects.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene_interface.so;general;/opt/ros/kinetic/lib/libmoveit_move_group_interface.so;general;/opt/ros/kinetic/lib/libmoveit_warehouse.so;general;/opt/ros/kinetic/lib/libwarehouse_ros.so;general;/opt/ros/kinetic/lib/libmoveit_pick_place_planner.so;general;/opt/ros/kinetic/lib/libmoveit_move_group_capabilities_base.so;general;/opt/ros/kinetic/lib/libmoveit_rdf_loader.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_plugin_loader.so;general;/opt/ros/kinetic/lib/libmoveit_robot_model_loader.so;general;/opt/ros/kinetic/lib/libmoveit_constraint_sampler_manager_loader.so;general;/opt/ros/kinetic/lib/libmoveit_planning_pipeline.so;general;/opt/ros/kinetic/lib/libmoveit_trajectory_execution_manager.so;general;/opt/ros/kinetic/lib/libmoveit_plan_execution.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene_monitor.so;general;/opt/ros/kinetic/lib/libmoveit_collision_plugin_loader.so;general;/opt/ros/kinetic/lib/libmoveit_lazy_free_space_updater.so;general;/opt/ros/kinetic/lib/libmoveit_point_containment_filter.so;general;/opt/ros/kinetic/lib/libmoveit_occupancy_map_monitor.so;general;/opt/ros/kinetic/lib/libmoveit_pointcloud_octomap_updater_core.so;general;/opt/ros/kinetic/lib/libmoveit_semantic_world.so;general;/opt/ros/kinetic/lib/libmoveit_exceptions.so;general;/opt/ros/kinetic/lib/libmoveit_background_processing.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_base.so;general;/opt/ros/kinetic/lib/libmoveit_robot_model.so;general;/opt/ros/kinetic/lib/libmoveit_transforms.so;general;/opt/ros/kinetic/lib/libmoveit_robot_state.so;general;/opt/ros/kinetic/lib/libmoveit_robot_trajectory.so;general;/opt/ros/kinetic/lib/libmoveit_planning_interface.so;general;/opt/ros/kinetic/lib/libmoveit_collision_detection.so;general;/opt/ros/kinetic/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/kinetic/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene.so;general;/opt/ros/kinetic/lib/libmoveit_constraint_samplers.so;general;/opt/ros/kinetic/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/kinetic/lib/libmoveit_profiler.so;general;/opt/ros/kinetic/lib/libmoveit_trajectory_processing.so;general;/opt/ros/kinetic/lib/libmoveit_distance_field.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/kinetic/lib/libmoveit_dynamics_solver.so;general;/opt/ros/kinetic/lib/libmoveit_utils.so;general;/usr/lib/x86_64-linux-gnu/libfcl.so;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/libgeometric_shapes.so;general;/opt/ros/kinetic/lib/liboctomap.so;general;/opt/ros/kinetic/lib/liboctomath.so;general;/opt/ros/kinetic/lib/libkdl_parser.so;general;/opt/ros/kinetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/opt/ros/kinetic/lib/librosconsole_bridge.so;general;/opt/ros/kinetic/lib/librandom_numbers.so;general;/opt/ros/kinetic/lib/libsrdfdom.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libtf_conversions.so;general;/opt/ros/kinetic/lib/libkdl_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libpcl_ros_filters.so;general;/opt/ros/kinetic/lib/libpcl_ros_io.so;general;/opt/ros/kinetic/lib/libpcl_ros_tf.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_common.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_common.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_kdtree.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_kdtree.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_octree.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_octree.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_search.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_search.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_io.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_io.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_filters.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_filters.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_features.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_features.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_segmentation.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_segmentation.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_surface.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_surface.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_registration.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_registration.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_recognition.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_recognition.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_keypoints.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_keypoints.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_visualization.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_visualization.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_people.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_people.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_outofcore.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_outofcore.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_tracking.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_tracking.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;general;/usr/lib/x86_64-linux-gnu/libvtkImagingStencil-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonComputationalGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonDataModel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonMath-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtksys-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonMisc-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonSystem-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonTransforms-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonExecutionModel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersAMR-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeneral-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOLegacy-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionWidgets-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersHybrid-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingSources-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonColor-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersExtraction-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingFourier-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkalglib-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSources-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersModeling-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingGeneral-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingHybrid-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkDICOMParser-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkmetaio-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionStyle-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingAnnotation-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingColor-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeType-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libvtkftgl-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingVolume-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelNetCDF-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelMPI-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libnetcdf_c++.so;general;/usr/lib/x86_64-linux-gnu/libnetcdf.so;general;/usr/lib/x86_64-linux-gnu/hdf5/serial/lib/libhdf5.so;general;/usr/lib/x86_64-linux-gnu/libsz.so;general;/usr/lib/x86_64-linux-gnu/libm.so;general;/usr/lib/x86_64-linux-gnu/hdf5/serial/lib/libhdf5_hl.so;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOLSDyna-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOXML-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libjsoncpp.so;general;/usr/lib/x86_64-linux-gnu/libvtkIOXMLParser-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libexpat.so;general;/usr/lib/x86_64-linux-gnu/libvtkLocalExample-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkGeovisCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisLayout-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkproj4-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingGenericBridge-6.2.so.6.2.0;general;/usr/lib/libgl2ps.so;general;/usr/lib/x86_64-linux-gnu/libvtkverdict-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMovie-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libtheoraenc.so;general;/usr/lib/x86_64-linux-gnu/libtheoradec.so;general;/usr/lib/x86_64-linux-gnu/libogg.so;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersImaging-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMINC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLOD-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsInfovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkChartsCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingContext2D-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLabel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersFlowPaths-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkxdmf2-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersReebGraph-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsContext2D-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOXdmf2-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOAMR-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingContextOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIONetCDF-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkexoIIc-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelLSDyna-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOPLY-6.2.so.6.2.0;general;/usr/lib/libvtkWrappingTools-6.2.a;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersHyperTree-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingVolumeOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOExodus-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOPostgreSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libsqlite3.so;general;/usr/lib/x86_64-linux-gnu/libvtkWrappingJava-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelFlowPaths-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersProgrammable-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelImaging-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingParallelLIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersPython-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkWrappingPython27Core-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelExodus-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeneric-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOVideo-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersTexture-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOInfovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeTypeOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisBoostGraphAlgorithms-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingGL2PS-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGeoJSON-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersVerdict-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsGeovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOImport-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingIOSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkPythonInterpreter-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOODBC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOEnSight-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMySQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingMatplotlib-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkDomainsChemistry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOExport-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelMPI-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelXML-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingRendering-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMPIParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelMPI4Py-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSMP-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSelection-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOVPIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkVPIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingMath-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingMorphological-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeTypeFontConfig-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOFFMPEG-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMPIImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGDAL-6.2.so.6.2.0;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/librosbag.so;general;/opt/ros/kinetic/lib/librosbag_storage.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/opt/ros/kinetic/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;general;/opt/ros/kinetic/lib/libtopic_tools.so;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;ceres;
-
-//Value Computed by CMake
-industrial_extrinsic_cal_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/industrial_calibration/industrial_extrinsic_cal
-
 //The directory containing a CMake configuration file for industrial_msgs.
 industrial_msgs_DIR:PATH=/opt/ros/kinetic/share/industrial_msgs/cmake
 
-//Value Computed by CMake
-intrinsic_cal_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/industrial_calibration/intrinsic_cal
-
-//Value Computed by CMake
-intrinsic_cal_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/industrial_calibration/intrinsic_cal
-
-//Dependencies for the target
-io_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;object_recognition_core_common;
-
 //The directory containing a CMake configuration file for joint_limits_interface.
 joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cmake
-
-//The directory containing a CMake configuration file for kdl_conversions.
-kdl_conversions_DIR:PATH=/opt/ros/kinetic/share/kdl_conversions/cmake
 
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/kinetic/share/kdl_parser/cmake
@@ -1138,30 +1022,6 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
-//The directory containing a CMake configuration file for moveit_core.
-moveit_core_DIR:PATH=/opt/ros/kinetic/share/moveit_core/cmake
-
-//The directory containing a CMake configuration file for moveit_msgs.
-moveit_msgs_DIR:PATH=/opt/ros/kinetic/share/moveit_msgs/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_manipulation.
-moveit_ros_manipulation_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_manipulation/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_move_group.
-moveit_ros_move_group_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_move_group/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_perception.
-moveit_ros_perception_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_perception/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_planning.
-moveit_ros_planning_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_planning/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_planning_interface.
-moveit_ros_planning_interface_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_planning_interface/cmake
-
-//The directory containing a CMake configuration file for moveit_ros_warehouse.
-moveit_ros_warehouse_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_warehouse/cmake
-
 //Value Computed by CMake
 multimaster_fkie_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/multimaster_fkie/multimaster_fkie
 
@@ -1189,56 +1049,32 @@ nodelet_DIR:PATH=/opt/ros/kinetic/share/nodelet/cmake
 //The directory containing a CMake configuration file for nodelet_topic_tools.
 nodelet_topic_tools_DIR:PATH=/opt/ros/kinetic/share/nodelet_topic_tools/cmake
 
-//Value Computed by CMake
-object_recognition_core_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/object_recognition_core
-
-//Value Computed by CMake
-object_recognition_core_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/object_recognition_core
-
-//Dependencies for the target
-object_recognition_core_common_LIB_DEPENDS:STATIC=general;object_recognition_core_db;
-
-//Dependencies for the target
-object_recognition_core_db_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
-
-//The directory containing a CMake configuration file for object_recognition_msgs.
-object_recognition_msgs_DIR:PATH=/opt/ros/kinetic/share/object_recognition_msgs/cmake
-
-//Value Computed by CMake
-object_recognition_tutorials_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/ork_tutorials
-
-//Value Computed by CMake
-object_recognition_tutorials_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/ork_tutorials
-
-//The directory containing a CMake configuration file for octomap_msgs.
-octomap_msgs_DIR:PATH=/opt/ros/kinetic/share/octomap_msgs/cmake
-
 //Path to a library.
 onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libignition-math2.so
 
 //Value Computed by CMake
-panda_moveit_config_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/panda_moveit_config
+openni2_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/openni2_camera/openni2_camera
 
 //Value Computed by CMake
-panda_moveit_config_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/panda_moveit_config
-
-//The directory containing a CMake configuration file for pcl_conversions.
-pcl_conversions_DIR:PATH=/opt/ros/kinetic/share/pcl_conversions/cmake
-
-//The directory containing a CMake configuration file for pcl_msgs.
-pcl_msgs_DIR:PATH=/opt/ros/kinetic/share/pcl_msgs/cmake
-
-//The directory containing a CMake configuration file for pcl_ros.
-pcl_ros_DIR:PATH=/opt/ros/kinetic/share/pcl_ros/cmake
+openni2_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/openni2_camera/openni2_camera
 
 //Dependencies for the target
-pipelines_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;object_recognition_core_common;
+openni2_camera_nodelet_LIB_DEPENDS:STATIC=general;openni2_driver_lib;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
+
+//Dependencies for the target
+openni2_driver_lib_LIB_DEPENDS:STATIC=general;openni2_wrapper;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
+
+//Value Computed by CMake
+openni2_launch_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/openni2_camera/openni2_launch
+
+//Value Computed by CMake
+openni2_launch_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/openni2_camera/openni2_launch
+
+//Dependencies for the target
+openni2_wrapper_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;OpenNI2;general;DummyDevice;general;OniFile;general;PS1080;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
-
-//The directory containing a CMake configuration file for random_numbers.
-random_numbers_DIR:PATH=/opt/ros/kinetic/share/random_numbers/cmake
 
 //The directory containing a CMake configuration file for realsense2.
 realsense2_DIR:PATH=/usr/local/lib/cmake/realsense2
@@ -1254,30 +1090,6 @@ realsense2_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/realsense/realsense2
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/kinetic/share/realtime_tools/cmake
-
-//Value Computed by CMake
-rgbd_depth_correction_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/industrial_calibration/rgbd_depth_correction
-
-//Dependencies for the target
-rgbd_depth_correction_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libpcl_ros_filters.so;general;/opt/ros/kinetic/lib/libpcl_ros_io.so;general;/opt/ros/kinetic/lib/libpcl_ros_tf.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_common.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_common.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_kdtree.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_kdtree.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_octree.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_octree.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_search.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_search.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_io.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_io.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_filters.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_filters.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_features.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_features.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_segmentation.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_segmentation.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_surface.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_surface.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_registration.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_registration.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_recognition.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_recognition.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_keypoints.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_keypoints.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_visualization.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_visualization.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_people.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_people.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_outofcore.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_outofcore.so;optimized;/usr/lib/x86_64-linux-gnu/libpcl_tracking.so;debug;/usr/lib/x86_64-linux-gnu/libpcl_tracking.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;general;/usr/lib/x86_64-linux-gnu/libvtkImagingStencil-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonComputationalGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonDataModel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonMath-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtksys-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonMisc-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonSystem-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonTransforms-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonExecutionModel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersAMR-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeneral-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOLegacy-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionWidgets-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersHybrid-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingSources-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkCommonColor-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersExtraction-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingFourier-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkalglib-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSources-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersModeling-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingGeneral-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingHybrid-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkDICOMParser-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkmetaio-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionStyle-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingAnnotation-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingColor-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeType-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libvtkftgl-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingVolume-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelNetCDF-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelMPI-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libnetcdf_c++.so;general;/usr/lib/x86_64-linux-gnu/libnetcdf.so;general;/usr/lib/x86_64-linux-gnu/hdf5/serial/lib/libhdf5.so;general;/usr/lib/x86_64-linux-gnu/libsz.so;general;/usr/lib/x86_64-linux-gnu/libm.so;general;/usr/lib/x86_64-linux-gnu/hdf5/serial/lib/libhdf5_hl.so;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOLSDyna-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOXML-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libjsoncpp.so;general;/usr/lib/x86_64-linux-gnu/libvtkIOXMLParser-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libexpat.so;general;/usr/lib/x86_64-linux-gnu/libvtkLocalExample-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkGeovisCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisLayout-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkproj4-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingGenericBridge-6.2.so.6.2.0;general;/usr/lib/libgl2ps.so;general;/usr/lib/x86_64-linux-gnu/libvtkverdict-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMovie-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libtheoraenc.so;general;/usr/lib/x86_64-linux-gnu/libtheoradec.so;general;/usr/lib/x86_64-linux-gnu/libogg.so;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersImaging-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMINC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLOD-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsInfovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkChartsCore-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingContext2D-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLabel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersFlowPaths-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkxdmf2-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersReebGraph-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsContext2D-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOXdmf2-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOAMR-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingContextOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIONetCDF-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkexoIIc-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelLSDyna-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelGeometry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOPLY-6.2.so.6.2.0;general;/usr/lib/libvtkWrappingTools-6.2.a;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersHyperTree-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingVolumeOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOExodus-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOPostgreSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libsqlite3.so;general;/usr/lib/x86_64-linux-gnu/libvtkWrappingJava-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelFlowPaths-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelStatistics-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersProgrammable-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelImaging-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingParallelLIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingLIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInteractionImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersPython-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkWrappingPython27Core-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelExodus-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersGeneric-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOVideo-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersTexture-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOInfovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeTypeOpenGL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkInfovisBoostGraphAlgorithms-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingGL2PS-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGeoJSON-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersVerdict-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkViewsGeovis-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOImport-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingIOSQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkPythonInterpreter-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOODBC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOEnSight-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMySQL-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingMatplotlib-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkDomainsChemistry-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOExport-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersParallelMPI-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOParallelXML-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkTestingRendering-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMPIParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkParallelMPI4Py-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSMP-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkFiltersSelection-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOVPIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkVPIC-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingMath-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkImagingMorphological-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingParallel-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkRenderingFreeTypeFontConfig-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOFFMPEG-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOMPIImage-6.2.so.6.2.0;general;/usr/lib/x86_64-linux-gnu/libvtkIOGDAL-6.2.so.6.2.0;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/opt/ros/kinetic/lib/librosbag.so;general;/opt/ros/kinetic/lib/librosbag_storage.so;general;/opt/ros/kinetic/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;general;/opt/ros/kinetic/lib/libtopic_tools.so;general;industrial_extrinsic_cal;general;/usr/local/lib/libceres.a;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libmoveit_common_planning_interface_objects.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene_interface.so;general;/opt/ros/kinetic/lib/libmoveit_move_group_interface.so;general;/opt/ros/kinetic/lib/libmoveit_warehouse.so;general;/opt/ros/kinetic/lib/libwarehouse_ros.so;general;/opt/ros/kinetic/lib/libmoveit_pick_place_planner.so;general;/opt/ros/kinetic/lib/libmoveit_move_group_capabilities_base.so;general;/opt/ros/kinetic/lib/libmoveit_rdf_loader.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_plugin_loader.so;general;/opt/ros/kinetic/lib/libmoveit_robot_model_loader.so;general;/opt/ros/kinetic/lib/libmoveit_constraint_sampler_manager_loader.so;general;/opt/ros/kinetic/lib/libmoveit_planning_pipeline.so;general;/opt/ros/kinetic/lib/libmoveit_trajectory_execution_manager.so;general;/opt/ros/kinetic/lib/libmoveit_plan_execution.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene_monitor.so;general;/opt/ros/kinetic/lib/libmoveit_collision_plugin_loader.so;general;/opt/ros/kinetic/lib/libmoveit_lazy_free_space_updater.so;general;/opt/ros/kinetic/lib/libmoveit_point_containment_filter.so;general;/opt/ros/kinetic/lib/libmoveit_occupancy_map_monitor.so;general;/opt/ros/kinetic/lib/libmoveit_pointcloud_octomap_updater_core.so;general;/opt/ros/kinetic/lib/libmoveit_semantic_world.so;general;/opt/ros/kinetic/lib/libmoveit_exceptions.so;general;/opt/ros/kinetic/lib/libmoveit_background_processing.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_base.so;general;/opt/ros/kinetic/lib/libmoveit_robot_model.so;general;/opt/ros/kinetic/lib/libmoveit_transforms.so;general;/opt/ros/kinetic/lib/libmoveit_robot_state.so;general;/opt/ros/kinetic/lib/libmoveit_robot_trajectory.so;general;/opt/ros/kinetic/lib/libmoveit_planning_interface.so;general;/opt/ros/kinetic/lib/libmoveit_collision_detection.so;general;/opt/ros/kinetic/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/kinetic/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/kinetic/lib/libmoveit_planning_scene.so;general;/opt/ros/kinetic/lib/libmoveit_constraint_samplers.so;general;/opt/ros/kinetic/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/kinetic/lib/libmoveit_profiler.so;general;/opt/ros/kinetic/lib/libmoveit_trajectory_processing.so;general;/opt/ros/kinetic/lib/libmoveit_distance_field.so;general;/opt/ros/kinetic/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/kinetic/lib/libmoveit_dynamics_solver.so;general;/opt/ros/kinetic/lib/libmoveit_utils.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libfcl.so;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/libgeometric_shapes.so;general;/opt/ros/kinetic/lib/liboctomap.so;general;/opt/ros/kinetic/lib/liboctomath.so;general;/opt/ros/kinetic/lib/libkdl_parser.so;general;/opt/ros/kinetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/opt/ros/kinetic/lib/librosconsole_bridge.so;general;/opt/ros/kinetic/lib/librandom_numbers.so;general;/opt/ros/kinetic/lib/libsrdfdom.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf_conversions.so;general;/opt/ros/kinetic/lib/libkdl_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libyaml-cpp.so;general;ceres;
-
-//Value Computed by CMake
-rgbd_depth_correction_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/industrial_calibration/rgbd_depth_correction
-
-//Value Computed by CMake
-robo_cylinder_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/intelligent_actuator/robo_cylinder
-
-//The directory containing a CMake configuration file for robo_cylinder.
-robo_cylinder_DIR:PATH=/home/casch/yumi_ws/devel/share/robo_cylinder/cmake
-
-//Value Computed by CMake
-robo_cylinder_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/intelligent_actuator/robo_cylinder
-
-//The directory containing a CMake configuration file for rosbag.
-rosbag_DIR:PATH=/opt/ros/kinetic/share/rosbag/cmake
-
-//The directory containing a CMake configuration file for rosbag_storage.
-rosbag_storage_DIR:PATH=/opt/ros/kinetic/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
@@ -1300,14 +1112,11 @@ rosgraph_DIR:PATH=/opt/ros/kinetic/share/rosgraph/cmake
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/kinetic/share/rosgraph_msgs/cmake
 
+//The directory containing a CMake configuration file for roslaunch.
+roslaunch_DIR:PATH=/opt/ros/kinetic/share/roslaunch/cmake
+
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/opt/ros/kinetic/share/roslib/cmake
-
-//The directory containing a CMake configuration file for roslint.
-roslint_DIR:PATH=/opt/ros/kinetic/share/roslint/cmake
-
-//The directory containing a CMake configuration file for roslz4.
-roslz4_DIR:PATH=/opt/ros/kinetic/share/roslz4/cmake
 
 //The directory containing a CMake configuration file for rospack.
 rospack_DIR:PATH=/opt/ros/kinetic/share/rospack/cmake
@@ -1324,17 +1133,11 @@ rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
 
-//The directory containing a CMake configuration file for shape_msgs.
-shape_msgs_DIR:PATH=/opt/ros/kinetic/share/shape_msgs/cmake
-
 //The directory containing a CMake configuration file for simple_message.
 simple_message_DIR:PATH=/opt/ros/kinetic/share/simple_message/cmake
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/kinetic/share/smclib/cmake
-
-//The directory containing a CMake configuration file for srdfdom.
-srdfdom_DIR:PATH=/opt/ros/kinetic/share/srdfdom/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
@@ -1354,15 +1157,6 @@ stereo_image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/stere
 //The directory containing a CMake configuration file for stereo_msgs.
 stereo_msgs_DIR:PATH=/opt/ros/kinetic/share/stereo_msgs/cmake
 
-//Value Computed by CMake
-target_finder_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/industrial_calibration/target_finder
-
-//The directory containing a CMake configuration file for target_finder.
-target_finder_DIR:PATH=/home/casch/yumi_ws/devel/share/target_finder/cmake
-
-//Value Computed by CMake
-target_finder_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/industrial_calibration/target_finder
-
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/kinetic/share/tf2/cmake
 
@@ -1381,12 +1175,6 @@ tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
-//The directory containing a CMake configuration file for tf_conversions.
-tf_conversions_DIR:PATH=/opt/ros/kinetic/share/tf_conversions/cmake
-
-//The directory containing a CMake configuration file for topic_tools.
-topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
-
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
 
@@ -1396,26 +1184,8 @@ transmission_interface_DIR:PATH=/opt/ros/kinetic/share/transmission_interface/cm
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
 
-//The directory containing a CMake configuration file for urdfdom_py.
-urdfdom_py_DIR:PATH=/opt/ros/kinetic/share/urdfdom_py/cmake
-
-//The directory containing a CMake configuration file for visualization_msgs.
-visualization_msgs_DIR:PATH=/opt/ros/kinetic/share/visualization_msgs/cmake
-
-//Dependencies for the target
-voter_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/opt/ros/kinetic/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;object_recognition_core_db;
-
-//The directory containing a CMake configuration file for warehouse_ros.
-warehouse_ros_DIR:PATH=/opt/ros/kinetic/share/warehouse_ros/cmake
-
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
-
-//Path to a file.
-yaml_cpp_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-yaml_cpp_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libyaml-cpp.so
 
 //Value Computed by CMake
 yumi_control_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/yumi/yumi_control
@@ -1474,12 +1244,6 @@ yumi_support_DIR:PATH=/home/casch/yumi_ws/devel/share/yumi_support/cmake
 //Value Computed by CMake
 yumi_support_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/yumi/yumi_support
 
-//Value Computed by CMake
-yumipy_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/yumipy
-
-//Value Computed by CMake
-yumipy_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/yumipy
-
 
 ########################
 # INTERNAL cache entries
@@ -1517,18 +1281,10 @@ Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
 Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_PYTHON_LIBRARY_DEBUG
-Boost_PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_PYTHON_LIBRARY_RELEASE
-Boost_PYTHON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_REGEX_LIBRARY_DEBUG
 Boost_REGEX_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_REGEX_LIBRARY_RELEASE
 Boost_REGEX_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_DEBUG
-Boost_SERIALIZATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_RELEASE
-Boost_SERIALIZATION_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SIGNALS_LIBRARY_DEBUG
 Boost_SIGNALS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SIGNALS_LIBRARY_RELEASE
@@ -1640,7 +1396,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=30
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=26
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1679,22 +1435,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_INCLUDE_DIR
-CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_LIBRARY
-CURL_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ECTO_LOG_STATS
-ECTO_LOG_STATS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: EIGEN_INCLUDE_DIR
-EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//Details about finding CURL
-FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include][v7.47.0()]
-//Details about finding Eigen
-FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding GTK2_GTK
 FIND_PACKAGE_MESSAGE_DETAILS_GTK2_GTK:INTERNAL=[/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so][/usr/include/gtk-2.0][/usr/include/gtk-2.0][/usr/lib/x86_64-linux-gnu/gtk-2.0/include][/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so][/usr/include/glib-2.0][/usr/lib/x86_64-linux-gnu/glib-2.0/include][/usr/lib/x86_64-linux-gnu/libglib-2.0.so][v()]
-//Details about finding Git
-FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.7.4()]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/opt/ros/kinetic][cfound components:  core imgproc ][v3.3.1()]
 //Details about finding PkgConfig
@@ -1703,8 +1445,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.12()]
-//Details about finding PythonLibs
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython2.7.so][/usr/include/python2.7][v2.7.12()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
@@ -1713,20 +1453,8 @@ FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
 FREETYPE_INCLUDE_DIR_ft2build-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_LIBRARY
 FREETYPE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GFLAGS_INCLUDE_DIR
-GFLAGS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//Test GFLAGS_IN_GOOGLE_NAMESPACE
-GFLAGS_IN_GOOGLE_NAMESPACE:INTERNAL=1
-//ADVANCED property for variable: GFLAGS_LIBRARY
-GFLAGS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GFLAGS_NAMESPACE
-GFLAGS_NAMESPACE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GLOG_INCLUDE_DIR
-GLOG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GLOG_LIBRARY
-GLOG_LIBRARY-ADVANCED:INTERNAL=1
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
@@ -2019,40 +1747,40 @@ OGRE_Volume_LIBRARY_DBG-ADVANCED:INTERNAL=1
 OGRE_Volume_LIBRARY_FWK-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OGRE_Volume_LIBRARY_REL
 OGRE_Volume_LIBRARY_REL-ADVANCED:INTERNAL=1
-PC_EIGEN_CFLAGS:INTERNAL=-I/usr/include/eigen3
-PC_EIGEN_CFLAGS_I:INTERNAL=
-PC_EIGEN_CFLAGS_OTHER:INTERNAL=
-PC_EIGEN_FOUND:INTERNAL=1
-PC_EIGEN_INCLUDEDIR:INTERNAL=
-PC_EIGEN_INCLUDE_DIRS:INTERNAL=/usr/include/eigen3
-PC_EIGEN_LDFLAGS:INTERNAL=
-PC_EIGEN_LDFLAGS_OTHER:INTERNAL=
-PC_EIGEN_LIBDIR:INTERNAL=
-PC_EIGEN_LIBRARIES:INTERNAL=
-PC_EIGEN_LIBRARY_DIRS:INTERNAL=
-PC_EIGEN_LIBS:INTERNAL=
-PC_EIGEN_LIBS_L:INTERNAL=
-PC_EIGEN_LIBS_OTHER:INTERNAL=
-PC_EIGEN_LIBS_PATHS:INTERNAL=
-PC_EIGEN_PREFIX:INTERNAL=/usr
-PC_EIGEN_STATIC_CFLAGS:INTERNAL=-I/usr/include/eigen3
-PC_EIGEN_STATIC_CFLAGS_I:INTERNAL=
-PC_EIGEN_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_EIGEN_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/eigen3
-PC_EIGEN_STATIC_LDFLAGS:INTERNAL=
-PC_EIGEN_STATIC_LDFLAGS_OTHER:INTERNAL=
-PC_EIGEN_STATIC_LIBDIR:INTERNAL=
-PC_EIGEN_STATIC_LIBRARIES:INTERNAL=
-PC_EIGEN_STATIC_LIBRARY_DIRS:INTERNAL=
-PC_EIGEN_STATIC_LIBS:INTERNAL=
-PC_EIGEN_STATIC_LIBS_L:INTERNAL=
-PC_EIGEN_STATIC_LIBS_OTHER:INTERNAL=
-PC_EIGEN_STATIC_LIBS_PATHS:INTERNAL=
-PC_EIGEN_VERSION:INTERNAL=3.2.92
-PC_EIGEN_eigen3_INCLUDEDIR:INTERNAL=
-PC_EIGEN_eigen3_LIBDIR:INTERNAL=
-PC_EIGEN_eigen3_PREFIX:INTERNAL=
-PC_EIGEN_eigen3_VERSION:INTERNAL=
+PC_OPENNI2_CFLAGS:INTERNAL=-I/usr/include/openni2
+PC_OPENNI2_CFLAGS_I:INTERNAL=
+PC_OPENNI2_CFLAGS_OTHER:INTERNAL=
+PC_OPENNI2_FOUND:INTERNAL=1
+PC_OPENNI2_INCLUDEDIR:INTERNAL=/usr/include/openni2
+PC_OPENNI2_INCLUDE_DIRS:INTERNAL=/usr/include/openni2
+PC_OPENNI2_LDFLAGS:INTERNAL=-L/usr/lib/OpenNI2/Drivers;-lOpenNI2;-lDummyDevice;-lOniFile;-lPS1080
+PC_OPENNI2_LDFLAGS_OTHER:INTERNAL=
+PC_OPENNI2_LIBDIR:INTERNAL=/usr/lib
+PC_OPENNI2_LIBRARIES:INTERNAL=OpenNI2;DummyDevice;OniFile;PS1080
+PC_OPENNI2_LIBRARY_DIRS:INTERNAL=/usr/lib/OpenNI2/Drivers
+PC_OPENNI2_LIBS:INTERNAL=
+PC_OPENNI2_LIBS_L:INTERNAL=
+PC_OPENNI2_LIBS_OTHER:INTERNAL=
+PC_OPENNI2_LIBS_PATHS:INTERNAL=
+PC_OPENNI2_PREFIX:INTERNAL=/usr
+PC_OPENNI2_STATIC_CFLAGS:INTERNAL=-I/usr/include/openni2
+PC_OPENNI2_STATIC_CFLAGS_I:INTERNAL=
+PC_OPENNI2_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_OPENNI2_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/openni2
+PC_OPENNI2_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/OpenNI2/Drivers;-lOpenNI2;-lDummyDevice;-lOniFile;-lPS1080
+PC_OPENNI2_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_OPENNI2_STATIC_LIBDIR:INTERNAL=
+PC_OPENNI2_STATIC_LIBRARIES:INTERNAL=OpenNI2;DummyDevice;OniFile;PS1080
+PC_OPENNI2_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/OpenNI2/Drivers
+PC_OPENNI2_STATIC_LIBS:INTERNAL=
+PC_OPENNI2_STATIC_LIBS_L:INTERNAL=
+PC_OPENNI2_STATIC_LIBS_OTHER:INTERNAL=
+PC_OPENNI2_STATIC_LIBS_PATHS:INTERNAL=
+PC_OPENNI2_VERSION:INTERNAL=2.2.0.3
+PC_OPENNI2_libopenni2_INCLUDEDIR:INTERNAL=
+PC_OPENNI2_libopenni2_LIBDIR:INTERNAL=
+PC_OPENNI2_libopenni2_PREFIX:INTERNAL=
+PC_OPENNI2_libopenni2_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PROTOBUF_INCLUDE_DIR
@@ -2073,20 +1801,12 @@ PROTOBUF_PROTOC_LIBRARY-ADVANCED:INTERNAL=1
 PROTOBUF_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_INCLUDE_DIR
-PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
-//ADVANCED property for variable: PYTHON_LIBRARY
-PYTHON_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
-PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//File containing master sphinx projects list
-SPHINX_LIST:INTERNAL=/home/casch/yumi_ws/build/CMakeFiles/sphinx_projects.list
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;python;regex;serialization;signals;system;thread
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;regex;signals;system;thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
@@ -2098,41 +1818,6 @@ _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 __pkg_config_checked_OGRE_PKGC:INTERNAL=1
-__pkg_config_checked_PC_EIGEN:INTERNAL=1
-__pkg_config_checked_yaml_cpp:INTERNAL=1
-prefix_result:INTERNAL=
-yaml_cpp_CFLAGS:INTERNAL=
-yaml_cpp_CFLAGS_I:INTERNAL=
-yaml_cpp_CFLAGS_OTHER:INTERNAL=
-yaml_cpp_FOUND:INTERNAL=1
-yaml_cpp_INCLUDEDIR:INTERNAL=/usr/include
-yaml_cpp_INCLUDE_DIRS:INTERNAL=
-yaml_cpp_LDFLAGS:INTERNAL=-lyaml-cpp
-yaml_cpp_LDFLAGS_OTHER:INTERNAL=
-yaml_cpp_LIBDIR:INTERNAL=
-yaml_cpp_LIBRARIES:INTERNAL=yaml-cpp
-yaml_cpp_LIBRARY_DIRS:INTERNAL=
-yaml_cpp_LIBS:INTERNAL=
-yaml_cpp_LIBS_L:INTERNAL=
-yaml_cpp_LIBS_OTHER:INTERNAL=
-yaml_cpp_LIBS_PATHS:INTERNAL=
-yaml_cpp_PREFIX:INTERNAL=/usr
-yaml_cpp_STATIC_CFLAGS:INTERNAL=
-yaml_cpp_STATIC_CFLAGS_I:INTERNAL=
-yaml_cpp_STATIC_CFLAGS_OTHER:INTERNAL=
-yaml_cpp_STATIC_INCLUDE_DIRS:INTERNAL=
-yaml_cpp_STATIC_LDFLAGS:INTERNAL=-lyaml-cpp
-yaml_cpp_STATIC_LDFLAGS_OTHER:INTERNAL=
-yaml_cpp_STATIC_LIBDIR:INTERNAL=
-yaml_cpp_STATIC_LIBRARIES:INTERNAL=yaml-cpp
-yaml_cpp_STATIC_LIBRARY_DIRS:INTERNAL=
-yaml_cpp_STATIC_LIBS:INTERNAL=
-yaml_cpp_STATIC_LIBS_L:INTERNAL=
-yaml_cpp_STATIC_LIBS_OTHER:INTERNAL=
-yaml_cpp_STATIC_LIBS_PATHS:INTERNAL=
-yaml_cpp_VERSION:INTERNAL=0.5.2
-yaml_cpp_yaml-cpp_INCLUDEDIR:INTERNAL=
-yaml_cpp_yaml-cpp_LIBDIR:INTERNAL=
-yaml_cpp_yaml-cpp_PREFIX:INTERNAL=
-yaml_cpp_yaml-cpp_VERSION:INTERNAL=
+__pkg_config_checked_PC_OPENNI2:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib
 

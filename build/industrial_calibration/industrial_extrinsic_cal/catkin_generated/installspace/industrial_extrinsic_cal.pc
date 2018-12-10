@@ -1,8 +1,0 @@
-prefix=/home/casch/yumi_ws/install
-
-Name: industrial_extrinsic_cal
-Description: Description of industrial_extrinsic_cal
-Version: 0.1.0
-Cflags: -I/home/casch/yumi_ws/install/include -I/usr/include -I/usr/local/include -I/usr/include/eigen3
-Libs: -L/home/casch/yumi_ws/install/lib -lindustrial_extrinsic_cal /usr/local/lib/libceres.a
-Requires: actionlib actionlib_msgs cv_bridge geometry_msgs image_transport message_runtime moveit_ros_planning_interface rosconsole roscpp roslib roslint sensor_msgs std_msgs std_srvs tf tf_conversions

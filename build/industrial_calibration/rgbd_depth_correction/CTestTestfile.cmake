@@ -1,6 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/casch/yumi_ws/src/industrial_calibration/rgbd_depth_correction
-# Build directory: /home/casch/yumi_ws/build/industrial_calibration/rgbd_depth_correction
-# 
-# This file includes the relevant testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.
