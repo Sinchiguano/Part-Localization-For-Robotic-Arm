@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(ros_astra_launch)
 subdirs(caliPACKAGES/image_common/image_common)
 subdirs(caliPACKAGES/image_pipeline/image_pipeline)
 subdirs(multimaster_fkie/multimaster_fkie)
@@ -17,6 +18,7 @@ subdirs(caliPACKAGES/image_pipeline/camera_calibration)
 subdirs(caliPACKAGES/image_common/camera_calibration_parsers)
 subdirs(caliPACKAGES/image_common/image_transport)
 subdirs(caliPACKAGES/image_common/camera_info_manager)
+subdirs(ros_astra_camera)
 subdirs(caliPACKAGES/image_pipeline/image_proc)
 subdirs(caliPACKAGES/image_pipeline/image_publisher)
 subdirs(caliPACKAGES/image_common/polled_camera)

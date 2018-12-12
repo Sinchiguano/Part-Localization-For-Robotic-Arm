@@ -292,7 +292,7 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f caliPACKAGES/image_common/image_common/CMakeFiles/_catkin_empty_exported_target.dir/build.make caliPACKAGES/image_common/image_common/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f ros_astra_launch/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_astra_launch/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
@@ -1518,56 +1518,264 @@ _run_tests_camera_info_manager_rostest/fast:
 .PHONY : _run_tests_camera_info_manager_rostest/fast
 
 #=============================================================================
-# Target rules for targets named image_proc_exe
+# Target rules for targets named astra_usb_reset
 
 # Build rule for target.
-image_proc_exe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_proc_exe
-.PHONY : image_proc_exe
+astra_usb_reset: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_usb_reset
+.PHONY : astra_usb_reset
 
 # fast build rule for target.
-image_proc_exe/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_exe.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_exe.dir/build
-.PHONY : image_proc_exe/fast
+astra_usb_reset/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_usb_reset.dir/build.make ros_astra_camera/CMakeFiles/astra_usb_reset.dir/build
+.PHONY : astra_usb_reset/fast
 
 #=============================================================================
-# Target rules for targets named image_proc
+# Target rules for targets named bond_generate_messages_eus
 
 # Build rule for target.
-image_proc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_proc
-.PHONY : image_proc
+bond_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_eus
+.PHONY : bond_generate_messages_eus
 
 # fast build rule for target.
-image_proc/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc.dir/build
-.PHONY : image_proc/fast
+bond_generate_messages_eus/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make ros_astra_camera/CMakeFiles/bond_generate_messages_eus.dir/build
+.PHONY : bond_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named image_proc_gencfg
+# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
 
 # Build rule for target.
-image_proc_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_proc_gencfg
-.PHONY : image_proc_gencfg
+dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
 
 # fast build rule for target.
-image_proc_gencfg/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_gencfg.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_gencfg.dir/build
-.PHONY : image_proc_gencfg/fast
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named dynamic_reconfigure_gencfg
+# Target rules for targets named _astra_camera_generate_messages_check_deps_GetSerial
 
 # Build rule for target.
-dynamic_reconfigure_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
-.PHONY : dynamic_reconfigure_gencfg
+_astra_camera_generate_messages_check_deps_GetSerial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _astra_camera_generate_messages_check_deps_GetSerial
+.PHONY : _astra_camera_generate_messages_check_deps_GetSerial
 
 # fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
+_astra_camera_generate_messages_check_deps_GetSerial/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetSerial.dir/build.make ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetSerial.dir/build
+.PHONY : _astra_camera_generate_messages_check_deps_GetSerial/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_generate_messages_py
+
+# Build rule for target.
+nodelet_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_py
+.PHONY : nodelet_generate_messages_py
+
+# fast build rule for target.
+nodelet_generate_messages_py/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make ros_astra_camera/CMakeFiles/nodelet_generate_messages_py.dir/build
+.PHONY : nodelet_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_nodejs
+
+# Build rule for target.
+bond_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_nodejs
+.PHONY : bond_generate_messages_nodejs
+
+# fast build rule for target.
+bond_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make ros_astra_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build
+.PHONY : bond_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_lisp
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_lisp
+.PHONY : dynamic_reconfigure_generate_messages_lisp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_lisp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_generate_messages_lisp
+
+# Build rule for target.
+nodelet_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_lisp
+.PHONY : nodelet_generate_messages_lisp
+
+# fast build rule for target.
+nodelet_generate_messages_lisp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make ros_astra_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_generate_messages_eus
+
+# Build rule for target.
+nodelet_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_eus
+.PHONY : nodelet_generate_messages_eus
+
+# fast build rule for target.
+nodelet_generate_messages_eus/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make ros_astra_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build
+.PHONY : nodelet_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_generate_messages_nodejs
+
+# Build rule for target.
+nodelet_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_nodejs
+.PHONY : nodelet_generate_messages_nodejs
+
+# fast build rule for target.
+nodelet_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make ros_astra_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
+.PHONY : nodelet_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages_lisp
+
+# Build rule for target.
+astra_camera_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages_lisp
+.PHONY : astra_camera_generate_messages_lisp
+
+# fast build rule for target.
+astra_camera_generate_messages_lisp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages_lisp.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages_lisp.dir/build
+.PHONY : astra_camera_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_py
+
+# Build rule for target.
+bond_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_py
+.PHONY : bond_generate_messages_py
+
+# fast build rule for target.
+bond_generate_messages_py/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/bond_generate_messages_py.dir/build.make ros_astra_camera/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_generate_messages_cpp
+
+# Build rule for target.
+nodelet_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_cpp
+.PHONY : nodelet_generate_messages_cpp
+
+# fast build rule for target.
+nodelet_generate_messages_cpp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make ros_astra_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+.PHONY : nodelet_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_eus
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_gencpp
+
+# Build rule for target.
+astra_camera_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_gencpp
+.PHONY : astra_camera_gencpp
+
+# fast build rule for target.
+astra_camera_gencpp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_gencpp.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_gencpp.dir/build
+.PHONY : astra_camera_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_cpp
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_cpp
+.PHONY : dynamic_reconfigure_generate_messages_cpp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_cpp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_geneus
+
+# Build rule for target.
+astra_camera_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_geneus
+.PHONY : astra_camera_geneus
+
+# fast build rule for target.
+astra_camera_geneus/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_geneus.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_geneus.dir/build
+.PHONY : astra_camera_geneus/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_gennodejs
+
+# Build rule for target.
+astra_camera_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_gennodejs
+.PHONY : astra_camera_gennodejs
+
+# fast build rule for target.
+astra_camera_gennodejs/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_gennodejs.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_gennodejs.dir/build
+.PHONY : astra_camera_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named astra_list_devices
+
+# Build rule for target.
+astra_list_devices: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_list_devices
+.PHONY : astra_list_devices
+
+# fast build rule for target.
+astra_list_devices/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_list_devices.dir/build.make ros_astra_camera/CMakeFiles/astra_list_devices.dir/build
+.PHONY : astra_list_devices/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_lisp
+
+# Build rule for target.
+bond_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_lisp
+.PHONY : bond_generate_messages_lisp
+
+# fast build rule for target.
+bond_generate_messages_lisp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make ros_astra_camera/CMakeFiles/bond_generate_messages_lisp.dir/build
+.PHONY : bond_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_py
@@ -1579,8 +1787,216 @@ dynamic_reconfigure_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_gencfg
+
+# Build rule for target.
+dynamic_reconfigure_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
+.PHONY : dynamic_reconfigure_gencfg
+
+# fast build rule for target.
+dynamic_reconfigure_gencfg/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make ros_astra_camera/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages_eus
+
+# Build rule for target.
+astra_camera_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages_eus
+.PHONY : astra_camera_generate_messages_eus
+
+# fast build rule for target.
+astra_camera_generate_messages_eus/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages_eus.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages_eus.dir/build
+.PHONY : astra_camera_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_gencfg
+
+# Build rule for target.
+astra_camera_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_gencfg
+.PHONY : astra_camera_gencfg
+
+# fast build rule for target.
+astra_camera_gencfg/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_gencfg.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_gencfg.dir/build
+.PHONY : astra_camera_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages
+
+# Build rule for target.
+astra_camera_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages
+.PHONY : astra_camera_generate_messages
+
+# fast build rule for target.
+astra_camera_generate_messages/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages.dir/build
+.PHONY : astra_camera_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages_cpp
+
+# Build rule for target.
+astra_camera_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages_cpp
+.PHONY : astra_camera_generate_messages_cpp
+
+# fast build rule for target.
+astra_camera_generate_messages_cpp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages_cpp.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages_cpp.dir/build
+.PHONY : astra_camera_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named astra_driver_lib
+
+# Build rule for target.
+astra_driver_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_driver_lib
+.PHONY : astra_driver_lib
+
+# fast build rule for target.
+astra_driver_lib/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_driver_lib.dir/build.make ros_astra_camera/CMakeFiles/astra_driver_lib.dir/build
+.PHONY : astra_driver_lib/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_genlisp
+
+# Build rule for target.
+astra_camera_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_genlisp
+.PHONY : astra_camera_genlisp
+
+# fast build rule for target.
+astra_camera_genlisp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_genlisp.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_genlisp.dir/build
+.PHONY : astra_camera_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named astra_openni2
+
+# Build rule for target.
+astra_openni2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_openni2
+.PHONY : astra_openni2
+
+# fast build rule for target.
+astra_openni2/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_openni2.dir/build.make ros_astra_camera/CMakeFiles/astra_openni2.dir/build
+.PHONY : astra_openni2/fast
+
+#=============================================================================
+# Target rules for targets named astra_test_wrapper
+
+# Build rule for target.
+astra_test_wrapper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_test_wrapper
+.PHONY : astra_test_wrapper
+
+# fast build rule for target.
+astra_test_wrapper/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_test_wrapper.dir/build.make ros_astra_camera/CMakeFiles/astra_test_wrapper.dir/build
+.PHONY : astra_test_wrapper/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_genpy
+
+# Build rule for target.
+astra_camera_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_genpy
+.PHONY : astra_camera_genpy
+
+# fast build rule for target.
+astra_camera_genpy/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_genpy.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_genpy.dir/build
+.PHONY : astra_camera_genpy/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages_nodejs
+
+# Build rule for target.
+astra_camera_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages_nodejs
+.PHONY : astra_camera_generate_messages_nodejs
+
+# fast build rule for target.
+astra_camera_generate_messages_nodejs/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages_nodejs.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages_nodejs.dir/build
+.PHONY : astra_camera_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named astra_wrapper
+
+# Build rule for target.
+astra_wrapper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_wrapper
+.PHONY : astra_wrapper
+
+# fast build rule for target.
+astra_wrapper/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_wrapper.dir/build.make ros_astra_camera/CMakeFiles/astra_wrapper.dir/build
+.PHONY : astra_wrapper/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_nodelet
+
+# Build rule for target.
+astra_camera_nodelet: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_nodelet
+.PHONY : astra_camera_nodelet
+
+# fast build rule for target.
+astra_camera_nodelet/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_nodelet.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_nodelet.dir/build
+.PHONY : astra_camera_nodelet/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_cpp
+
+# Build rule for target.
+bond_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_cpp
+.PHONY : bond_generate_messages_cpp
+
+# fast build rule for target.
+bond_generate_messages_cpp/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make ros_astra_camera/CMakeFiles/bond_generate_messages_cpp.dir/build
+.PHONY : bond_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_generate_messages_py
+
+# Build rule for target.
+astra_camera_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_generate_messages_py
+.PHONY : astra_camera_generate_messages_py
+
+# fast build rule for target.
+astra_camera_generate_messages_py/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_generate_messages_py.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_generate_messages_py.dir/build
+.PHONY : astra_camera_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named astra_camera_node
+
+# Build rule for target.
+astra_camera_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astra_camera_node
+.PHONY : astra_camera_node
+
+# fast build rule for target.
+astra_camera_node/fast:
+	$(MAKE) -f ros_astra_camera/CMakeFiles/astra_camera_node.dir/build.make ros_astra_camera/CMakeFiles/astra_camera_node.dir/build
+.PHONY : astra_camera_node/fast
 
 #=============================================================================
 # Target rules for targets named nodelet_topic_tools_gencfg
@@ -1596,186 +2012,43 @@ nodelet_topic_tools_gencfg/fast:
 .PHONY : nodelet_topic_tools_gencfg/fast
 
 #=============================================================================
-# Target rules for targets named bond_generate_messages_lisp
+# Target rules for targets named image_proc
 
 # Build rule for target.
-bond_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_lisp
-.PHONY : bond_generate_messages_lisp
+image_proc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_proc
+.PHONY : image_proc
 
 # fast build rule for target.
-bond_generate_messages_lisp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_lisp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_lisp.dir/build
-.PHONY : bond_generate_messages_lisp/fast
+image_proc/fast:
+	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc.dir/build
+.PHONY : image_proc/fast
 
 #=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_cpp
+# Target rules for targets named image_proc_exe
 
 # Build rule for target.
-dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_cpp
-.PHONY : dynamic_reconfigure_generate_messages_cpp
+image_proc_exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_proc_exe
+.PHONY : image_proc_exe
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+image_proc_exe/fast:
+	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_exe.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_exe.dir/build
+.PHONY : image_proc_exe/fast
 
 #=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_eus
+# Target rules for targets named image_proc_gencfg
 
 # Build rule for target.
-dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
-.PHONY : dynamic_reconfigure_generate_messages_eus
+image_proc_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_proc_gencfg
+.PHONY : image_proc_gencfg
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named nodelet_generate_messages_cpp
-
-# Build rule for target.
-nodelet_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_cpp
-.PHONY : nodelet_generate_messages_cpp
-
-# fast build rule for target.
-nodelet_generate_messages_cpp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-.PHONY : nodelet_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named nodelet_generate_messages_nodejs
-
-# Build rule for target.
-nodelet_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_nodejs
-.PHONY : nodelet_generate_messages_nodejs
-
-# fast build rule for target.
-nodelet_generate_messages_nodejs/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-.PHONY : nodelet_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named nodelet_generate_messages_eus
-
-# Build rule for target.
-nodelet_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_eus
-.PHONY : nodelet_generate_messages_eus
-
-# fast build rule for target.
-nodelet_generate_messages_eus/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_eus.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_eus.dir/build
-.PHONY : nodelet_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named nodelet_generate_messages_lisp
-
-# Build rule for target.
-nodelet_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_lisp
-.PHONY : nodelet_generate_messages_lisp
-
-# fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_lisp
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_lisp
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named bond_generate_messages_nodejs
-
-# Build rule for target.
-bond_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_nodejs
-.PHONY : bond_generate_messages_nodejs
-
-# fast build rule for target.
-bond_generate_messages_nodejs/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_nodejs.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_nodejs.dir/build
-.PHONY : bond_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named nodelet_generate_messages_py
-
-# Build rule for target.
-nodelet_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodelet_generate_messages_py
-.PHONY : nodelet_generate_messages_py
-
-# fast build rule for target.
-nodelet_generate_messages_py/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_py.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/nodelet_generate_messages_py.dir/build
-.PHONY : nodelet_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named bond_generate_messages_cpp
-
-# Build rule for target.
-bond_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_cpp
-.PHONY : bond_generate_messages_cpp
-
-# fast build rule for target.
-bond_generate_messages_cpp/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_cpp.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_cpp.dir/build
-.PHONY : bond_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named bond_generate_messages_eus
-
-# Build rule for target.
-bond_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_eus
-.PHONY : bond_generate_messages_eus
-
-# fast build rule for target.
-bond_generate_messages_eus/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_eus.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_eus.dir/build
-.PHONY : bond_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named bond_generate_messages_py
-
-# Build rule for target.
-bond_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bond_generate_messages_py
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_py.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
+image_proc_gencfg/fast:
+	$(MAKE) -f caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_gencfg.dir/build.make caliPACKAGES/image_pipeline/image_proc/CMakeFiles/image_proc_gencfg.dir/build
+.PHONY : image_proc_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named clean_test_results_image_proc
@@ -3285,26 +3558,47 @@ help:
 	@echo "... camera_info_manager"
 	@echo "... run_tests_camera_info_manager"
 	@echo "... _run_tests_camera_info_manager_rostest"
-	@echo "... image_proc_exe"
-	@echo "... image_proc"
-	@echo "... image_proc_gencfg"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... nodelet_topic_tools_gencfg"
-	@echo "... bond_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
-	@echo "... nodelet_generate_messages_cpp"
-	@echo "... nodelet_generate_messages_nodejs"
-	@echo "... nodelet_generate_messages_eus"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... bond_generate_messages_nodejs"
-	@echo "... nodelet_generate_messages_py"
-	@echo "... bond_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... astra_usb_reset"
 	@echo "... bond_generate_messages_eus"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... _astra_camera_generate_messages_check_deps_GetSerial"
+	@echo "... nodelet_generate_messages_py"
+	@echo "... bond_generate_messages_nodejs"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... nodelet_generate_messages_eus"
+	@echo "... nodelet_generate_messages_nodejs"
+	@echo "... astra_camera_generate_messages_lisp"
 	@echo "... bond_generate_messages_py"
+	@echo "... nodelet_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... astra_camera_gencpp"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... astra_camera_geneus"
+	@echo "... astra_camera_gennodejs"
+	@echo "... astra_list_devices"
+	@echo "... bond_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... astra_camera_generate_messages_eus"
+	@echo "... astra_camera_gencfg"
+	@echo "... astra_camera_generate_messages"
+	@echo "... astra_camera_generate_messages_cpp"
+	@echo "... astra_driver_lib"
+	@echo "... astra_camera_genlisp"
+	@echo "... astra_openni2"
+	@echo "... astra_test_wrapper"
+	@echo "... astra_camera_genpy"
+	@echo "... astra_camera_generate_messages_nodejs"
+	@echo "... astra_wrapper"
+	@echo "... astra_camera_nodelet"
+	@echo "... bond_generate_messages_cpp"
+	@echo "... astra_camera_generate_messages_py"
+	@echo "... astra_camera_node"
+	@echo "... nodelet_topic_tools_gencfg"
+	@echo "... image_proc"
+	@echo "... image_proc_exe"
+	@echo "... image_proc_gencfg"
 	@echo "... clean_test_results_image_proc"
 	@echo "... _run_tests_image_proc_rostest_test_test_rectify.xml"
 	@echo "... run_tests_image_proc"

@@ -8,6 +8,10 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/casch/yumi_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/casch/yumi_ws/devel/lib:$LD_LIBRARY_PATH"
+export PATH="/home/casch/yumi_ws/devel/bin:$PATH"
+export PKG_CONFIG_PATH="/home/casch/yumi_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/casch/yumi_ws/build"
+export PYTHONPATH="/home/casch/yumi_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/casch/yumi_ws/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/casch/yumi_ws/src:$ROS_PACKAGE_PATH"
