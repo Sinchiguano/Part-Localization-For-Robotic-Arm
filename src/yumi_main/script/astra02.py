@@ -107,8 +107,8 @@ def main():
     rospy.Subscriber('/camera/rgb/image_raw', Image, callback_rgb)
     rospy.Subscriber('/camera/depth/image_raw', Image, callback_depth)
 
-    # rospy.Subscriber('/camera/depth/camera_info', CameraInfo,infoDepthCallback)
-    # rospy.Subscriber('/camera/rgb/camera_info', CameraInfo,infoColorCallback)
+    rospy.Subscriber('/camera/depth/camera_info', CameraInfo,infoDepthCallback)
+    rospy.Subscriber('/camera/rgb/camera_info', CameraInfo,infoColorCallback)
 
 
     rospy.Subscriber('/camera/depth_registered/points', PointCloud2, callback_pointCloud)
@@ -128,24 +128,26 @@ def main():
 
         # wait for image or point cloud to be ready
         if pc is None:
-            print('nothing there!!!')
+            print('no PointCloud2!!!')
             continue
-        # elif img is None:
-        #     continue
-        # elif dpth is None:
-        #     continue
+        elif img is None:
+            print('no rgb image!!!')
+            continue
+        elif depth is None:
+            print('no depth image!!!')
+            continue
         # from plyfile import PlyData, PlyElement
         # print('type:',type(pc))
         # print('shape:',pc.shape)
         # print('good!!!')
 
-        el = PlyElement.describe(pc, 'cloud')
-        PlyData([el]).write('some_binary.ply')
+        # el = PlyElement.describe(pc, 'cloud')
+        # PlyData([el]).write('some_binary.ply')
         #pc.to_file("output.ply")
         #exit(0)
         cv2.imshow('point cloud:',pc)
         cv2.waitKey(3)
-        exit(0)
+
     # close any open windows
     cv2.destroyAllWindows()
     # spin() simply keeps python from exiting until this node is stopped

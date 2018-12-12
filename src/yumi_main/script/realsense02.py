@@ -114,11 +114,14 @@ def main():
 
         # wait for image or point cloud to be ready
         if img is None:
+            print('no rbg image!!!')
             continue
-        # elif pc is None:
-        #     continue
-        # elif dpth is None:
-        #     continue
+        elif pc is None:
+            print('no point cloud!!!')
+            continue
+        elif depth is None:
+            print('no depth image!!!')
+            continue
         #numpy_horizontal = np.hstack((img, pc))
         #
         print('good!!!')

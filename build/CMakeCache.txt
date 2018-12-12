@@ -20,9 +20,6 @@ BOOST_THREAD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
 
-//Use OpenMP
-BUILD_WITH_OPENMP:BOOL=OFF
-
 //Boost atomic library (debug)
 Boost_ATOMIC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
 
@@ -71,6 +68,12 @@ Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_
 //Boost program_options library (release)
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_program_options.so
 
+//Boost python library (debug)
+Boost_PYTHON_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
+
+//Boost python library (release)
+Boost_PYTHON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
+
 //Boost regex library (debug)
 Boost_REGEX_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_regex.so
 
@@ -102,7 +105,7 @@ CATKIN_BLACKLIST_PACKAGES:STRING=
 CATKIN_DEVEL_PREFIX:PATH=/home/casch/yumi_ws/devel
 
 //Catkin enable testing
-CATKIN_ENABLE_TESTING:BOOL=False
+CATKIN_ENABLE_TESTING:BOOL=ON
 
 //Catkin skip testing
 CATKIN_SKIP_TESTING:BOOL=OFF
@@ -119,7 +122,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -277,9 +280,6 @@ EMPY_SCRIPT:STRING=/usr/bin/empy
 //The directory containing a CMake configuration file for Eigen3.
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
-//OB Filter library
-FILTER:BOOL=OFF
-
 //Path to a file.
 FREETYPE_INCLUDE_DIR_freetype2:PATH=/usr/include/x86_64-linux-gnu/freetype2
 
@@ -288,9 +288,6 @@ FREETYPE_INCLUDE_DIR_ft2build:PATH=/usr/include/freetype2
 
 //Path to a library.
 FREETYPE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetype.so
-
-//Git command line client
-GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
@@ -706,6 +703,15 @@ PROTOBUF_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotoc.so
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
+//Path to a file.
+PYTHON_INCLUDE_DIR:PATH=/usr/include/python2.7
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython2.7.so
+
+//Path to a library.
+PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=
 
@@ -724,9 +730,6 @@ SDFormat_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
-//Set user wait point in startup (for debug)
-SET_USER_BREAK_AT_STARTUP:BOOL=OFF
-
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 
@@ -734,7 +737,7 @@ UBUNTU:BOOL=TRUE
 UBUNTU_XENIAL:BOOL=TRUE
 
 //Path to a file.
-_file_name:FILEPATH=/home/casch/yumi_ws/src/image_pipeline/image_proc/test/test_rectify.xml
+_file_name:FILEPATH=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_proc/test/test_rectify.xml
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
@@ -749,34 +752,13 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Path to a file.
-_path_name:FILEPATH=/home/casch/yumi_ws/src/image_pipeline/camera_calibration/test/multiple_boards.py
+_path_name:FILEPATH=/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers/test/parser.py
 
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/kinetic/share/actionlib/cmake
 
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/kinetic/share/actionlib_msgs/cmake
-
-//Value Computed by CMake
-astra_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/ros_astra_camera
-
-//Value Computed by CMake
-astra_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/ros_astra_camera
-
-//Dependencies for the target
-astra_camera_nodelet_LIB_DEPENDS:STATIC=general;astra_driver_lib;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
-
-//Dependencies for the target
-astra_driver_lib_LIB_DEPENDS:STATIC=general;astra_wrapper;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
-
-//Value Computed by CMake
-astra_launch_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/ros_astra_launch
-
-//Value Computed by CMake
-astra_launch_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/ros_astra_launch
-
-//Dependencies for the target
-astra_wrapper_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;-lOpenNI2Orbbec;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
 
 //The directory containing a CMake configuration file for bond.
 bond_DIR:PATH=/opt/ros/kinetic/share/bond/cmake
@@ -785,16 +767,37 @@ bond_DIR:PATH=/opt/ros/kinetic/share/bond/cmake
 bondcpp_DIR:PATH=/opt/ros/kinetic/share/bondcpp/cmake
 
 //Value Computed by CMake
-camera_calibration_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/camera_calibration
+camera_calibration_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/camera_calibration
 
 //Value Computed by CMake
-camera_calibration_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/camera_calibration
+camera_calibration_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/camera_calibration
+
+//Value Computed by CMake
+camera_calibration_parsers_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_common/camera_calibration_parsers
 
 //The directory containing a CMake configuration file for camera_calibration_parsers.
-camera_calibration_parsers_DIR:PATH=/opt/ros/kinetic/share/camera_calibration_parsers/cmake
+camera_calibration_parsers_DIR:PATH=/home/casch/yumi_ws/devel/share/camera_calibration_parsers/cmake
+
+//Dependencies for the target
+camera_calibration_parsers_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;yaml-cpp;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;
+
+//Value Computed by CMake
+camera_calibration_parsers_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers
+
+//Dependencies for the target
+camera_calibration_parsers_wrapper_LIB_DEPENDS:STATIC=general;camera_calibration_parsers;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_python.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;
+
+//Value Computed by CMake
+camera_info_manager_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_common/camera_info_manager
 
 //The directory containing a CMake configuration file for camera_info_manager.
-camera_info_manager_DIR:PATH=/opt/ros/kinetic/share/camera_info_manager/cmake
+camera_info_manager_DIR:PATH=/home/casch/yumi_ws/devel/share/camera_info_manager/cmake
+
+//Dependencies for the target
+camera_info_manager_LIB_DEPENDS:STATIC=general;camera_calibration_parsers;general;image_transport;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Value Computed by CMake
+camera_info_manager_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_info_manager
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
@@ -833,19 +836,16 @@ default_cfg_fkie_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/multimaster_fkie/de
 default_cfg_fkie_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/multimaster_fkie/default_cfg_fkie
 
 //Value Computed by CMake
-depth_image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/depth_image_proc
+depth_image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/depth_image_proc
 
 //Dependencies for the target
-depth_image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+depth_image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libeigen_conversions.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;image_transport;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
 
 //Value Computed by CMake
-depth_image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/depth_image_proc
+depth_image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/depth_image_proc
 
 //The directory containing a CMake configuration file for diagnostic_msgs.
 diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
-
-//The directory containing a CMake configuration file for diagnostic_updater.
-diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
@@ -935,56 +935,74 @@ hardware_interface_DIR:PATH=/opt/ros/kinetic/share/hardware_interface/cmake
 //The directory containing a CMake configuration file for ignition-math2.
 ignition-math2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math2
 
+//Value Computed by CMake
+image_common_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_common/image_common
+
+//Value Computed by CMake
+image_common_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_common/image_common
+
 //The directory containing a CMake configuration file for image_geometry.
 image_geometry_DIR:PATH=/opt/ros/kinetic/share/image_geometry/cmake
 
 //Value Computed by CMake
-image_pipeline_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/image_pipeline
+image_pipeline_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/image_pipeline
 
 //Value Computed by CMake
-image_pipeline_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_pipeline
+image_pipeline_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_pipeline
 
 //Value Computed by CMake
-image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/image_proc
+image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/image_proc
 
 //The directory containing a CMake configuration file for image_proc.
 image_proc_DIR:PATH=/home/casch/yumi_ws/devel/share/image_proc/cmake
 
 //Dependencies for the target
-image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;image_transport;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
 
 //Value Computed by CMake
-image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_proc
+image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_proc
 
 //Value Computed by CMake
-image_publisher_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/image_publisher
+image_publisher_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/image_publisher
 
 //Dependencies for the target
-image_publisher_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_core;general;opencv_core;general;opencv_imgcodecs;general;opencv_videoio;
+image_publisher_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;camera_info_manager;general;camera_calibration_parsers;general;image_transport;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_core;general;opencv_core;general;opencv_imgcodecs;general;opencv_videoio;
 
 //Value Computed by CMake
-image_publisher_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_publisher
+image_publisher_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_publisher
 
 //Value Computed by CMake
-image_rotate_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/image_rotate
+image_rotate_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/image_rotate
 
 //Dependencies for the target
-image_rotate_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_core;general;opencv_imgproc;
+image_rotate_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;image_transport;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_core;general;opencv_imgproc;
 
 //Value Computed by CMake
-image_rotate_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_rotate
+image_rotate_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_rotate
+
+//Value Computed by CMake
+image_transport_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_common/image_transport
 
 //The directory containing a CMake configuration file for image_transport.
-image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
-
-//Value Computed by CMake
-image_view_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/image_view
+image_transport_DIR:PATH=/home/casch/yumi_ws/devel/share/image_transport/cmake
 
 //Dependencies for the target
-image_view_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libgio-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgthread-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangoxft-1.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
+image_transport_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
 //Value Computed by CMake
-image_view_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/image_view
+image_transport_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_common/image_transport
+
+//Dependencies for the target
+image_transport_plugins_LIB_DEPENDS:STATIC=general;image_transport;
+
+//Value Computed by CMake
+image_view_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/image_view
+
+//Dependencies for the target
+image_view_LIB_DEPENDS:STATIC=general;camera_calibration_parsers;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;image_transport;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libgio-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgthread-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so;general;/usr/lib/x86_64-linux-gnu/libpangoxft-1.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
+
+//Value Computed by CMake
+image_view_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/image_view
 
 //The directory containing a CMake configuration file for industrial_msgs.
 industrial_msgs_DIR:PATH=/opt/ros/kinetic/share/industrial_msgs/cmake
@@ -1052,41 +1070,17 @@ nodelet_topic_tools_DIR:PATH=/opt/ros/kinetic/share/nodelet_topic_tools/cmake
 //Path to a library.
 onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libignition-math2.so
 
-//Value Computed by CMake
-openni2_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/openni2_camera/openni2_camera
-
-//Value Computed by CMake
-openni2_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/openni2_camera/openni2_camera
-
-//Dependencies for the target
-openni2_camera_nodelet_LIB_DEPENDS:STATIC=general;openni2_driver_lib;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
-
-//Dependencies for the target
-openni2_driver_lib_LIB_DEPENDS:STATIC=general;openni2_wrapper;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
-
-//Value Computed by CMake
-openni2_launch_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/openni2_camera/openni2_launch
-
-//Value Computed by CMake
-openni2_launch_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/openni2_camera/openni2_launch
-
-//Dependencies for the target
-openni2_wrapper_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;OpenNI2;general;DummyDevice;general;OniFile;general;PS1080;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;
-
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
 
-//The directory containing a CMake configuration file for realsense2.
-realsense2_DIR:PATH=/usr/local/lib/cmake/realsense2
-
 //Value Computed by CMake
-realsense2_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/realsense/realsense2_camera
+polled_camera_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_common/polled_camera
 
 //Dependencies for the target
-realsense2_camera_LIB_DEPENDS:STATIC=general;realsense2::realsense2;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+polled_camera_LIB_DEPENDS:STATIC=general;image_transport;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
 //Value Computed by CMake
-realsense2_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/realsense/realsense2_camera
+polled_camera_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/kinetic/share/realtime_tools/cmake
@@ -1111,9 +1105,6 @@ rosgraph_DIR:PATH=/opt/ros/kinetic/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/kinetic/share/rosgraph_msgs/cmake
-
-//The directory containing a CMake configuration file for roslaunch.
-roslaunch_DIR:PATH=/opt/ros/kinetic/share/roslaunch/cmake
 
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/opt/ros/kinetic/share/roslib/cmake
@@ -1146,13 +1137,13 @@ std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 std_srvs_DIR:PATH=/opt/ros/kinetic/share/std_srvs/cmake
 
 //Value Computed by CMake
-stereo_image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/image_pipeline/stereo_image_proc
+stereo_image_proc_BINARY_DIR:STATIC=/home/casch/yumi_ws/build/caliPACKAGES/image_pipeline/stereo_image_proc
 
 //Dependencies for the target
-stereo_image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;image_proc;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+stereo_image_proc_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;image_proc;general;/opt/ros/kinetic/lib/libimage_geometry.so;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1;general;image_transport;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/kinetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
 
 //Value Computed by CMake
-stereo_image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/image_pipeline/stereo_image_proc
+stereo_image_proc_SOURCE_DIR:STATIC=/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/stereo_image_proc
 
 //The directory containing a CMake configuration file for stereo_msgs.
 stereo_msgs_DIR:PATH=/opt/ros/kinetic/share/stereo_msgs/cmake
@@ -1281,6 +1272,10 @@ Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
 Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_DEBUG
+Boost_PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_RELEASE
+Boost_PYTHON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_REGEX_LIBRARY_DEBUG
 Boost_REGEX_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_REGEX_LIBRARY_RELEASE
@@ -1396,7 +1391,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=26
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=32
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1445,6 +1440,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.12()]
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython2.7.so][/usr/include/python2.7][v2.7.12()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
@@ -1453,8 +1450,6 @@ FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
 FREETYPE_INCLUDE_DIR_ft2build-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_LIBRARY
 FREETYPE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GIT_EXECUTABLE
-GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
@@ -1747,40 +1742,6 @@ OGRE_Volume_LIBRARY_DBG-ADVANCED:INTERNAL=1
 OGRE_Volume_LIBRARY_FWK-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OGRE_Volume_LIBRARY_REL
 OGRE_Volume_LIBRARY_REL-ADVANCED:INTERNAL=1
-PC_OPENNI2_CFLAGS:INTERNAL=-I/usr/include/openni2
-PC_OPENNI2_CFLAGS_I:INTERNAL=
-PC_OPENNI2_CFLAGS_OTHER:INTERNAL=
-PC_OPENNI2_FOUND:INTERNAL=1
-PC_OPENNI2_INCLUDEDIR:INTERNAL=/usr/include/openni2
-PC_OPENNI2_INCLUDE_DIRS:INTERNAL=/usr/include/openni2
-PC_OPENNI2_LDFLAGS:INTERNAL=-L/usr/lib/OpenNI2/Drivers;-lOpenNI2;-lDummyDevice;-lOniFile;-lPS1080
-PC_OPENNI2_LDFLAGS_OTHER:INTERNAL=
-PC_OPENNI2_LIBDIR:INTERNAL=/usr/lib
-PC_OPENNI2_LIBRARIES:INTERNAL=OpenNI2;DummyDevice;OniFile;PS1080
-PC_OPENNI2_LIBRARY_DIRS:INTERNAL=/usr/lib/OpenNI2/Drivers
-PC_OPENNI2_LIBS:INTERNAL=
-PC_OPENNI2_LIBS_L:INTERNAL=
-PC_OPENNI2_LIBS_OTHER:INTERNAL=
-PC_OPENNI2_LIBS_PATHS:INTERNAL=
-PC_OPENNI2_PREFIX:INTERNAL=/usr
-PC_OPENNI2_STATIC_CFLAGS:INTERNAL=-I/usr/include/openni2
-PC_OPENNI2_STATIC_CFLAGS_I:INTERNAL=
-PC_OPENNI2_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_OPENNI2_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/openni2
-PC_OPENNI2_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/OpenNI2/Drivers;-lOpenNI2;-lDummyDevice;-lOniFile;-lPS1080
-PC_OPENNI2_STATIC_LDFLAGS_OTHER:INTERNAL=
-PC_OPENNI2_STATIC_LIBDIR:INTERNAL=
-PC_OPENNI2_STATIC_LIBRARIES:INTERNAL=OpenNI2;DummyDevice;OniFile;PS1080
-PC_OPENNI2_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/OpenNI2/Drivers
-PC_OPENNI2_STATIC_LIBS:INTERNAL=
-PC_OPENNI2_STATIC_LIBS_L:INTERNAL=
-PC_OPENNI2_STATIC_LIBS_OTHER:INTERNAL=
-PC_OPENNI2_STATIC_LIBS_PATHS:INTERNAL=
-PC_OPENNI2_VERSION:INTERNAL=2.2.0.3
-PC_OPENNI2_libopenni2_INCLUDEDIR:INTERNAL=
-PC_OPENNI2_libopenni2_LIBDIR:INTERNAL=
-PC_OPENNI2_libopenni2_PREFIX:INTERNAL=
-PC_OPENNI2_libopenni2_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PROTOBUF_INCLUDE_DIR
@@ -1801,12 +1762,52 @@ PROTOBUF_PROTOC_LIBRARY-ADVANCED:INTERNAL=1
 PROTOBUF_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR
+PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
+PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+YAML_CPP_CFLAGS:INTERNAL=
+YAML_CPP_CFLAGS_I:INTERNAL=
+YAML_CPP_CFLAGS_OTHER:INTERNAL=
+YAML_CPP_FOUND:INTERNAL=1
+YAML_CPP_INCLUDEDIR:INTERNAL=/usr/include
+YAML_CPP_INCLUDE_DIRS:INTERNAL=
+YAML_CPP_LDFLAGS:INTERNAL=-lyaml-cpp
+YAML_CPP_LDFLAGS_OTHER:INTERNAL=
+YAML_CPP_LIBDIR:INTERNAL=
+YAML_CPP_LIBRARIES:INTERNAL=yaml-cpp
+YAML_CPP_LIBRARY_DIRS:INTERNAL=
+YAML_CPP_LIBS:INTERNAL=
+YAML_CPP_LIBS_L:INTERNAL=
+YAML_CPP_LIBS_OTHER:INTERNAL=
+YAML_CPP_LIBS_PATHS:INTERNAL=
+YAML_CPP_PREFIX:INTERNAL=/usr
+YAML_CPP_STATIC_CFLAGS:INTERNAL=
+YAML_CPP_STATIC_CFLAGS_I:INTERNAL=
+YAML_CPP_STATIC_CFLAGS_OTHER:INTERNAL=
+YAML_CPP_STATIC_INCLUDE_DIRS:INTERNAL=
+YAML_CPP_STATIC_LDFLAGS:INTERNAL=-lyaml-cpp
+YAML_CPP_STATIC_LDFLAGS_OTHER:INTERNAL=
+YAML_CPP_STATIC_LIBDIR:INTERNAL=
+YAML_CPP_STATIC_LIBRARIES:INTERNAL=yaml-cpp
+YAML_CPP_STATIC_LIBRARY_DIRS:INTERNAL=
+YAML_CPP_STATIC_LIBS:INTERNAL=
+YAML_CPP_STATIC_LIBS_L:INTERNAL=
+YAML_CPP_STATIC_LIBS_OTHER:INTERNAL=
+YAML_CPP_STATIC_LIBS_PATHS:INTERNAL=
+YAML_CPP_VERSION:INTERNAL=0.5.2
+YAML_CPP_yaml-cpp_INCLUDEDIR:INTERNAL=
+YAML_CPP_yaml-cpp_LIBDIR:INTERNAL=
+YAML_CPP_yaml-cpp_PREFIX:INTERNAL=
+YAML_CPP_yaml-cpp_VERSION:INTERNAL=
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;regex;signals;system;thread
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;python;regex;signals;system;thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
@@ -1818,6 +1819,6 @@ _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 __pkg_config_checked_OGRE_PKGC:INTERNAL=1
-__pkg_config_checked_PC_OPENNI2:INTERNAL=1
-prefix_result:INTERNAL=/usr/lib
+__pkg_config_checked_YAML_CPP:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 
