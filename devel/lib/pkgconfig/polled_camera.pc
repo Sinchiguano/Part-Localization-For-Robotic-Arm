@@ -3,6 +3,6 @@ prefix=/home/casch/yumi_ws/devel
 Name: polled_camera
 Description: Description of polled_camera
 Version: 1.11.13
-Cflags: -I/home/casch/yumi_ws/devel/include -I/home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera/include
+Cflags: -I/home/casch/yumi_ws/devel/include -I/home/casch/yumi_ws/src/caliPACK/image_common/polled_camera/include
 Libs: -L/home/casch/yumi_ws/devel/lib -lpolled_camera
 Requires: image_transport message_runtime roscpp sensor_msgs std_msgs

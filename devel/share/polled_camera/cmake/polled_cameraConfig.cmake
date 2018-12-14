@@ -67,7 +67,7 @@ set(polled_camera_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(polled_camera_SOURCE_PREFIX /home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera)
+  set(polled_camera_SOURCE_PREFIX /home/casch/yumi_ws/src/caliPACK/image_common/polled_camera)
   set(polled_camera_DEVEL_PREFIX /home/casch/yumi_ws/devel)
   set(polled_camera_INSTALL_PREFIX "")
   set(polled_camera_PREFIX ${polled_camera_DEVEL_PREFIX})
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(polled_camera_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera/include " STREQUAL " ")
+if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/caliPACK/image_common/polled_camera/include " STREQUAL " ")
   set(polled_camera_INCLUDE_DIRS "")
-  set(_include_dirs "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera/include")
+  set(_include_dirs "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/caliPACK/image_common/polled_camera/include")
   if(NOT "https://github.com/ros-perception/image_common/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-perception/image_common/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/polled_camera " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/caliPACKAGES/i
         message(FATAL_ERROR "Project 'polled_camera' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'polled_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/caliPACKAGES/image_common/polled_camera/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'polled_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/caliPACK/image_common/polled_camera/${idir}'.  ${_report}")
     endif()
     _list_append_unique(polled_camera_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/casch/yumi_ws/devel/lib;/home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

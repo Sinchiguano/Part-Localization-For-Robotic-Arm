@@ -1,0 +1,8 @@
+prefix=/home/casch/yumi_ws/install
+
+Name: aprilcal_helper
+Description: Description of aprilcal_helper
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/casch/yumi_ws/install/lib 
+Requires: 

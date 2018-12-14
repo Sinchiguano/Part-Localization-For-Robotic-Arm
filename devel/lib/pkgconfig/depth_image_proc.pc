@@ -3,6 +3,6 @@ prefix=/home/casch/yumi_ws/devel
 Name: depth_image_proc
 Description: Description of depth_image_proc
 Version: 1.12.23
-Cflags: -I/home/casch/yumi_ws/src/caliPACKAGES/image_pipeline/depth_image_proc/include
+Cflags: -I/home/casch/yumi_ws/src/caliPACK/image_pipeline/depth_image_proc/include
 Libs: -L/home/casch/yumi_ws/devel/lib -ldepth_image_proc
 Requires: 

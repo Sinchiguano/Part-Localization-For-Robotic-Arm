@@ -67,7 +67,7 @@ set(camera_calibration_parsers_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(camera_calibration_parsers_SOURCE_PREFIX /home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers)
+  set(camera_calibration_parsers_SOURCE_PREFIX /home/casch/yumi_ws/src/caliPACK/image_common/camera_calibration_parsers)
   set(camera_calibration_parsers_DEVEL_PREFIX /home/casch/yumi_ws/devel)
   set(camera_calibration_parsers_INSTALL_PREFIX "")
   set(camera_calibration_parsers_PREFIX ${camera_calibration_parsers_DEVEL_PREFIX})
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(camera_calibration_parsers_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers/include " STREQUAL " ")
+if(NOT "/home/casch/yumi_ws/src/caliPACK/image_common/camera_calibration_parsers/include " STREQUAL " ")
   set(camera_calibration_parsers_INCLUDE_DIRS "")
-  set(_include_dirs "/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers/include")
+  set(_include_dirs "/home/casch/yumi_ws/src/caliPACK/image_common/camera_calibration_parsers/include")
   if(NOT "https://github.com/ros-perception/image_common/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-perception/image_common/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/camera_calibration_parsers " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_par
         message(FATAL_ERROR "Project 'camera_calibration_parsers' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'camera_calibration_parsers' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/caliPACKAGES/image_common/camera_calibration_parsers/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'camera_calibration_parsers' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/caliPACK/image_common/camera_calibration_parsers/${idir}'.  ${_report}")
     endif()
     _list_append_unique(camera_calibration_parsers_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/casch/yumi_ws/devel/lib;/home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

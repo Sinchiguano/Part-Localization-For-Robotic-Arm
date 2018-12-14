@@ -67,7 +67,7 @@ set(yumi_hw_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(yumi_hw_SOURCE_PREFIX /home/casch/yumi_ws/src/yumi/yumi_hw)
+  set(yumi_hw_SOURCE_PREFIX /home/casch/yumi_ws/src/yumiPACK/yumi/yumi_hw)
   set(yumi_hw_DEVEL_PREFIX /home/casch/yumi_ws/devel)
   set(yumi_hw_INSTALL_PREFIX "")
   set(yumi_hw_PREFIX ${yumi_hw_DEVEL_PREFIX})
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(yumi_hw_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/yumi/yumi_hw/include " STREQUAL " ")
+if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/yumiPACK/yumi/yumi_hw/include " STREQUAL " ")
   set(yumi_hw_INCLUDE_DIRS "")
-  set(_include_dirs "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/yumi/yumi_hw/include")
+  set(_include_dirs "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/yumiPACK/yumi/yumi_hw/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/casch/yumi_ws/devel/include;/home/casch/yumi_ws/src/yumi/yumi_hw/i
         message(FATAL_ERROR "Project 'yumi_hw' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'yumi_hw' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/yumi/yumi_hw/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'yumi_hw' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/casch/yumi_ws/src/yumiPACK/yumi/yumi_hw/${idir}'.  ${_report}")
     endif()
     _list_append_unique(yumi_hw_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/casch/yumi_ws/devel/lib;/home/casch/yumi_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
