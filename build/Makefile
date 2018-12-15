@@ -623,19 +623,6 @@ list_transports/fast:
 .PHONY : list_transports/fast
 
 #=============================================================================
-# Target rules for targets named camera_to_tcp_node
-
-# Build rule for target.
-camera_to_tcp_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_to_tcp_node
-.PHONY : camera_to_tcp_node
-
-# fast build rule for target.
-camera_to_tcp_node/fast:
-	$(MAKE) -f aprilPACK/aprilcal_helper/CMakeFiles/camera_to_tcp_node.dir/build.make aprilPACK/aprilcal_helper/CMakeFiles/camera_to_tcp_node.dir/build
-.PHONY : camera_to_tcp_node/fast
-
-#=============================================================================
 # Target rules for targets named camera_info_manager
 
 # Build rule for target.
@@ -3049,7 +3036,6 @@ help:
 	@echo "... image_transport"
 	@echo "... republish"
 	@echo "... list_transports"
-	@echo "... camera_to_tcp_node"
 	@echo "... camera_info_manager"
 	@echo "... astra_usb_reset"
 	@echo "... bond_generate_messages_eus"

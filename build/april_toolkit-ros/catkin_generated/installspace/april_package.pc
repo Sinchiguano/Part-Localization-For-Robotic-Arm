@@ -1,0 +1,8 @@
+prefix=/home/casch/yumi_ws/install
+
+Name: april_package
+Description: Description of april_package
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/casch/yumi_ws/install/lib 
+Requires: 

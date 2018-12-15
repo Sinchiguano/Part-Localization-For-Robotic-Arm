@@ -82,13 +82,6 @@
 /home/casch/yumi_ws/build/caliPACK/image_common/image_transport/CMakeFiles/list_transports.dir
 /home/casch/yumi_ws/build/caliPACK/image_common/image_transport/CMakeFiles/install/strip.dir
 /home/casch/yumi_ws/build/caliPACK/image_common/image_transport/CMakeFiles/install.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/rebuild_cache.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/install/strip.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/camera_to_tcp_node.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/install.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/install/local.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/list_install_components.dir
-/home/casch/yumi_ws/build/aprilPACK/aprilcal_helper/CMakeFiles/edit_cache.dir
 /home/casch/yumi_ws/build/caliPACK/image_common/camera_info_manager/CMakeFiles/install/strip.dir
 /home/casch/yumi_ws/build/caliPACK/image_common/camera_info_manager/CMakeFiles/rebuild_cache.dir
 /home/casch/yumi_ws/build/caliPACK/image_common/camera_info_manager/CMakeFiles/camera_info_manager.dir
