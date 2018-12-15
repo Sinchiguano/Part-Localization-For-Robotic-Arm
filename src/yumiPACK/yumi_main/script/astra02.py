@@ -116,36 +116,31 @@ def main():
     global pts
 
     while(True):
-        #print('i am here and i am not able to see anything!!!')
+
         #get rgb image
         img = get_image()
+
+
+        #get depth image
+        depth=get_depth()
 
         #get point PointCloud2
         pc=get_point_cloud()
 
-        #get depth image
-        dpth=get_depth()
-
         # wait for image or point cloud to be ready
-        if pc is None:
-            print('no PointCloud2!!!')
-            continue
-        elif img is None:
+        if img is None:
             print('no rgb image!!!')
             continue
         elif depth is None:
             print('no depth image!!!')
             continue
-        # from plyfile import PlyData, PlyElement
-        # print('type:',type(pc))
-        # print('shape:',pc.shape)
-        # print('good!!!')
+        elif pc is None:
+            print('no PointCloud2!!!')
+            continue
 
-        # el = PlyElement.describe(pc, 'cloud')
-        # PlyData([el]).write('some_binary.ply')
-        #pc.to_file("output.ply")
-        #exit(0)
-        cv2.imshow('point cloud:',pc)
+
+        cv2.imshow('rgb image!!!',pc)
+
         cv2.waitKey(3)
 
     # close any open windows
