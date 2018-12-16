@@ -120,7 +120,6 @@ def main():
         #get rgb image
         img = get_image()
 
-
         #get depth image
         depth=get_depth()
 
@@ -139,9 +138,9 @@ def main():
             continue
 
 
-        cv2.imshow('rgb image!!!',pc)
-
-        cv2.waitKey(3)
+        # cv2.imshow('rgb image!!!',pc)
+        #
+        # cv2.waitKey(3)
 
     # close any open windows
     cv2.destroyAllWindows()

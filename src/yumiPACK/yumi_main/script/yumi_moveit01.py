@@ -37,7 +37,7 @@ class yumi_group(object):
 
         ## Instantiate a `MoveGroupCommander`_ object.  This object is an interface
         ## to a planning group (group of joints).
-        temp="right_arm"
+        temp="left_arm"
         #group_name = "panda_arm"
         move_group = moveit_commander.MoveGroupCommander(temp)#(group_name)
 

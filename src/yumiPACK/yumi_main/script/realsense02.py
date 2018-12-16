@@ -74,7 +74,7 @@ def callback_pointCloud(data):
     #print(pts.shape)
 
 def infoDepthCallback(msg):
-    #print('received info from depth camera!!!',msg)
+    print('received info from depth camera!!!',msg)
     print()
 def infoColorCallback(msg):
     rospy.loginfo("received info from color camera!!!%s",msg)
@@ -116,17 +116,17 @@ def main():
         if img is None:
             print('no rbg image!!!')
             continue
-        elif pc is None:
-            print('no point cloud!!!')
-            continue
+
         elif depth is None:
             print('no depth image!!!')
             continue
-        #numpy_horizontal = np.hstack((img, pc))
-        #
-        print('good!!!')
-        cv2.imshow('image',img)
-        cv2.waitKey(3)
+        elif pc is None:
+            print('no point cloud!!!')
+            continue
+
+        # print('good!!!')
+        # cv2.imshow('image',pc)
+        # cv2.waitKey(3)
 
     # close any open windows
     cv2.destroyAllWindows()
